@@ -1,0 +1,9 @@
+enabled_backends = ["arch"]
+
+hostname_groups_enabled = true
+
+[hostname_groups]
+endeavouros-personal = [ ]
+
+[arch]
+package_manager = "yay"
