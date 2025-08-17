@@ -14,5 +14,5 @@ arch = [
     # Audio extras
     "easyeffects",
     "lsp-plugins",
-    "wiremix",
+    "wiremix"
 ]
