@@ -4,6 +4,7 @@ arch = [
     "base-devel",
     "linux",
     "linux-firmware",
+    "grub",
     "yay",
     "yay-debug",
     "metapac",
