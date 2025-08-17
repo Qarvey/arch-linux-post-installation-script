@@ -1,0 +1,47 @@
+arch = [
+    # Session & services
+    "accountsservice",
+    "bash-completion",
+    "xdg-user-dirs",
+    "xdg-utils",
+
+    # Thumbnails & previews
+    "tumbler",
+    "ffmpegthumbnailer",
+    "ffmpeg-audio-thumbnailer",
+    "gst-libav",
+    "gst-plugin-pipewire",
+    "gst-plugins-bad",
+    "gst-plugins-ugly",
+    "libgsf",
+    "poppler-glib",
+    "folderpreview",
+
+    # Clipboard
+    "wl-clipboard",
+    "clipse",
+    "wl-clip-persist",
+
+    # Media & misc apps
+    "mpv",
+    "celluloid",
+    "flameshot",
+    "gthumb",
+    "papers",
+
+    # File managers
+    "superfile",
+    "pcmanfm-gtk3",
+
+    # General apps
+    "legcord-bin",
+    "onlyoffice-bin",
+
+    # Gaming
+    "steam",
+    "gamescope",
+    "protonup-qt-bin",
+
+    # Shells
+    "fish",
+]
