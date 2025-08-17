@@ -1,7 +1,6 @@
 arch = [
     # Disk tools
     "efibootmgr",
-    "smartmontools",
     "btrfs-progs",
     "gparted",
     "udisks2",
