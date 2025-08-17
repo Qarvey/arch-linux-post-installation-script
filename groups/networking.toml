@@ -1,5 +1,4 @@
 arch = [
-    # Networking
     "iwd",
     "networkmanager",
     "networkmanager-dmenu",
