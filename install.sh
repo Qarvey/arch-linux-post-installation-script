@@ -33,6 +33,9 @@ cp -rv ${SCRIPT_DIR}/groups/ $HOME/.config/metapac/groups/
 metapac unmanaged > $HOME/.config/metapac/groups/all.toml
 metapac sync
 
+echo 'EDITOR=micro' >> $HOME/.bashrc
+source $HOME/.bashrc
+
 # sudo systemctl stop wpa_supplicant
 # sudo systemctl disable wpa_supplicant
 # sudo systemctl mask wpa_supplicant
