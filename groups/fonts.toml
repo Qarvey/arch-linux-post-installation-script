@@ -5,5 +5,5 @@ arch = [
     "noto-fonts-cjk",
     "noto-fonts-extra",
     "ttf-dejavu",
-    "ttf-liberation",
+    "ttf-liberation"
 ]
