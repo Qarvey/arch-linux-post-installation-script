@@ -7,7 +7,7 @@ archlinux-personal = [
   "base",
   "hardware",
   "filesystem",
-  "networking",
+  "network",
   "audio",
   "utils",
   "desktop",
