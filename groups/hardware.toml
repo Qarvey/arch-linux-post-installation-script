@@ -17,4 +17,7 @@ arch = [
 
     # Power management
     "power-profiles-daemon"
+
+    # Drives
+    { package = "smartmontools", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "smartd" ] } }
 ]
