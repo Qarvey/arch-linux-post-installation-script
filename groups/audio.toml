@@ -1,0 +1,18 @@
+arch = [
+    # ALSA
+    "alsa-firmware",
+    "alsa-plugins",
+    "alsa-utils",
+
+    # PipeWire
+    "pipewire-pulse",
+    "pipewire-alsa",
+    "pipewire-jack",
+    "wireplumber",
+    "rtkit",
+
+    # Audio extras
+    "easyeffects",
+    "lsp-plugins",
+    "wiremix",
+]
