@@ -1,0 +1,9 @@
+arch = [
+    "freetype2",
+    "noto-fonts",
+    "noto-fonts-emoji",
+    "noto-fonts-cjk",
+    "noto-fonts-extra",
+    "ttf-dejavu",
+    "ttf-liberation",
+]
