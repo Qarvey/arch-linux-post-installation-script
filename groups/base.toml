@@ -9,7 +9,7 @@ arch = [
     "sed",
     "rsync",
     "git",
-    "reflector",
+    "ghostmirror", # `reflector` alternative
 
     # Package management helpers
     "downgrade",
