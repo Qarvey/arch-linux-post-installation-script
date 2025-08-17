@@ -2,12 +2,20 @@
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+mkdir -p $HOME/.mnt/samsung
+sudo echo "LABEL=storage  /home/quijada/.mnt/samsung  btrfs  noatime,compress=zstd  0 0" >> /etc/fstab
+
+mkdir -p $HOME/.mnt/btrfs_hdd
+sudo echo "LABEL=storage  /home/quijada/.mnt/btrfs_hdd  btrfs  noatime,compress=zstd  0 0" >> /etc/fstab
+
 cd $HOME
 
 sudo pacman -S --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
+cd ..
+rm -rf yay
 
 ${SCRIPT_DIR}/display-managers/lidm/lidm-service.sh
 
