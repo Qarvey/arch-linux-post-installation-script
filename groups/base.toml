@@ -1,5 +1,13 @@
 arch = [
     # Core
+    "base",
+    "base-devel",
+    "linux",
+    "linux-firmware",
+    "yay",
+    "yay-debug",
+    "metapac",
+    
     "linux-headers",
     "dkms",
     "wget",
@@ -19,7 +27,6 @@ arch = [
     },
 
     # Package management helpers
-    "metapac",
     "downgrade",
     "pacman-contrib",
     "rebuild-detector",
