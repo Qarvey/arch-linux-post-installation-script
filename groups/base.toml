@@ -10,6 +10,13 @@ arch = [
     "rsync",
     "git",
     "ghostmirror", # `reflector` alternative
+    {
+        package = "micro", hooks = {
+            after_install = [
+                "echo", "'export", "EDITOR=micro'", ">>", "~/.bashrc", "&&", "source", "~/.bashrc"
+            ]
+        }
+    },
 
     # Package management helpers
     "metapac",
