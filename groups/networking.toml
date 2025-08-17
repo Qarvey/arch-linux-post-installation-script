@@ -1,7 +1,0 @@
-arch = [
-    "iwd",
-    "networkmanager",
-    "networkmanager-dmenu",
-    "openssh",
-    "ufw",
-]

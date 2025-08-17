@@ -1,0 +1,13 @@
+arch = [
+    "iwd",
+    {
+        package = "networkmanager", hooks = {
+            after_install = [
+                "sudo", "systemctl", "enable", "--now", "NetworkManager"
+            ]
+        }
+    },
+    "networkmanager-dmenu",
+    "openssh",
+    "ufw"
+]
