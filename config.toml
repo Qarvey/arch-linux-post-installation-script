@@ -3,7 +3,17 @@ enabled_backends = ["arch"]
 hostname_groups_enabled = true
 
 [hostname_groups]
-endeavouros-personal = [ ]
+archlinux-personal = [
+  "base",
+  "hardware",
+  "filesystem",
+  "networking",
+  "audio",
+  "utils",
+  "desktop",
+  "hyprland",
+  "fonts"
+]
 
 [arch]
 package_manager = "yay"
