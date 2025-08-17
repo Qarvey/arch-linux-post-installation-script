@@ -9,15 +9,17 @@ arch = [
     "xdg-desktop-portal-hyprland",
     "xdg-desktop-portal-gtk",
 
-    # Panels & tools
+    # Services
     "swaync",
     "polkit-gnome",
-    "nwg-panel",
-    "nwg-look",
-    "nwg-displays",
-    "kitty",
-    "walker-bin",
-    "wev",
+
+    # Apps and tools
+    "nwg-panel", # Status bar
+    "nwg-look", # GTK theming
+    "nwg-displays", # Display management
+    "kitty", # Recommended terminal
+    "walker-bin", # Launcher
+    "wev", # Input debug
 
     # Clipboard
     "wl-clipboard",
