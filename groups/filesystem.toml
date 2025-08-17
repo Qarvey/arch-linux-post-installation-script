@@ -1,0 +1,21 @@
+arch = [
+    # Disk tools
+    "efibootmgr",
+    "smartmontools",
+    "btrfs-progs",
+    "gparted",
+    "udisks2",
+    "gvfs",
+    "gvfs-mtp",
+    "udiskie",
+
+    # Archive utilities
+    "file-roller",
+    "cdrtools",
+    "dpkg",
+    "7zip",
+    "rpmextract",
+    "unrar",
+    "unzip",
+    "zip",
+]
