@@ -12,6 +12,7 @@ arch = [
     "ghostmirror", # `reflector` alternative
 
     # Package management helpers
+    "metapac",
     "downgrade",
     "pacman-contrib",
     "rebuild-detector",
