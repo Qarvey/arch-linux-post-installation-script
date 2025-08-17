@@ -36,6 +36,12 @@ metapac sync
 echo 'EDITOR=micro' >> $HOME/.bashrc
 source $HOME/.bashrc
 
+USER=$(whoami)
+if ! getent group realtime > /dev/null; then
+    sudo groupadd realtime
+fi
+sudo usermod -aG realtime "$USER"
+
 # sudo systemctl stop wpa_supplicant
 # sudo systemctl disable wpa_supplicant
 # sudo systemctl mask wpa_supplicant
