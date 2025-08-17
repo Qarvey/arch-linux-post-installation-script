@@ -24,7 +24,10 @@ arch = [
     "fastfetch",
     "duf",
 
+    # Clean up
+    "rmlint",
+
     # Optional extras
     "python-defusedxml",
-    "python-packaging",
+    "python-packaging"
 ]
