@@ -4,6 +4,7 @@ arch = [
     "bash-completion",
     "xdg-user-dirs",
     "xdg-utils",
+    "lidm", # Display manager
 
     # Thumbnails & previews
     "tumbler",
