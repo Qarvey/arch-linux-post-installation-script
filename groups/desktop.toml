@@ -17,10 +17,7 @@ arch = [
     "poppler-glib",
     "folderpreview",
 
-    # Clipboard
-    "wl-clipboard",
-    "clipse",
-    "wl-clip-persist",
+    "clipse", # Clipboard
 
     # Media & misc apps
     "mpv",
@@ -30,12 +27,12 @@ arch = [
     "papers",
 
     # File managers
-    "superfile",
-    "pcmanfm-gtk3",
+    "superfile", # TUI
+    "pcmanfm-gtk3", # GUI
 
     # General apps
-    "legcord-bin",
-    "onlyoffice-bin",
+    "legcord-bin", # Discord client
+    "onlyoffice-bin", # Office suite
 
     # Gaming
     "steam",
@@ -43,5 +40,5 @@ arch = [
     "protonup-qt-bin",
 
     # Shells
-    "fish",
+    "fish"
 ]
