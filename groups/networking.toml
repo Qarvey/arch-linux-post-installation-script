@@ -1,0 +1,8 @@
+arch = [
+    # Networking
+    "iwd",
+    "networkmanager",
+    "networkmanager-dmenu",
+    "openssh",
+    "ufw",
+]
