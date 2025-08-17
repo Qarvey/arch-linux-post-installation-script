@@ -1,0 +1,18 @@
+arch = [
+    # Core
+    "linux-headers",
+    "dkms",
+    "wget",
+    "acpid",
+    "iproute2",
+    "findutils",
+    "sed",
+    "rsync",
+    "git",
+    "reflector",
+
+    # Package management helpers
+    "downgrade",
+    "pacman-contrib",
+    "rebuild-detector",
+]
