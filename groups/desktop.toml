@@ -4,12 +4,11 @@ arch = [
     "bash-completion",
     "xdg-user-dirs",
     "xdg-utils",
-    "lidm", # Display manager
     {
-        package = "lidm",
+        package = "lidm", # Display manager
         hooks = {
             after_install = [
-                "sudo mkdir -p /etc/systemd/system"
+                "sudo", "systemctl", "enable", "lidm"
             ]
         }
     },
