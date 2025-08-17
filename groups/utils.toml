@@ -1,0 +1,30 @@
+arch = [
+    # System monitoring
+    "glances",
+    "hwinfo",
+    "inxi",
+    "btop",
+    "gdu",
+
+    # Productivity
+    "meld",
+    "pv",
+    "rsync",
+    "tldr",
+    "micro",
+
+    # Search & navigation
+    "zoxide",
+    "ripgrep",
+    "fd",
+    "fzf",
+    "plocate",
+    "eza",
+    "bat",
+    "fastfetch",
+    "duf",
+
+    # Optional extras
+    "python-defusedxml",
+    "python-packaging",
+]
