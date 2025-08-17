@@ -5,6 +5,14 @@ arch = [
     "xdg-user-dirs",
     "xdg-utils",
     "lidm", # Display manager
+    {
+        package = "lidm",
+        hooks = {
+            after_install = [
+                "sudo mkdir -p /etc/systemd/system"
+            ]
+        }
+    },
 
     # Thumbnails & previews
     "tumbler",
