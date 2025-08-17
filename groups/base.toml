@@ -15,4 +15,5 @@ arch = [
     "downgrade",
     "pacman-contrib",
     "rebuild-detector",
+    "pacleaner"
 ]
