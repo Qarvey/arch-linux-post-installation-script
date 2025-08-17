@@ -27,6 +27,9 @@ arch = [
     # Clean up
     "rmlint",
 
+    # GPU monitor and control
+    "lact",
+
     # Optional extras
     "python-defusedxml",
     "python-packaging"
