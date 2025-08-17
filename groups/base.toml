@@ -19,6 +19,7 @@ arch = [
     "git",
     "ghostmirror", # `reflector` alternative
     "micro",
+    "realtime-privileges",
 
     # Package management helpers
     "downgrade",
