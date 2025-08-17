@@ -1,19 +1,7 @@
 arch = [
-    {
-        package = "networkmanager", hooks = {
-            after_install = [
-                "sudo", "systemctl", "enable", "--now", "NetworkManager"
-            ]
-        }
-    },
+    { package = "networkmanager", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "NetworkManager" ] } },
     "networkmanager-dmenu",
     "openssh",
     "ufw",
-    {
-        package = "iwd", hooks = {
-            after_install = [
-                "sudo", "systemctl", "enable", "--now", "iwd"
-            ]
-        }
-    }
+    { package = "iwd", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "iwd" ] } }
 ]
