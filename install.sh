@@ -7,8 +7,8 @@ cd $HOME
 mkdir -p $HOME/.mnt/samsung
 mkdir -p $HOME/.mnt/btrfs_hdd
 
-sudo echo "LABEL=storage  /home/quijada/.mnt/samsung  btrfs  noatime,compress=zstd,discard=async  0 0" >> /etc/fstab
-sudo echo "LABEL=btrfs_hdd  /home/quijada/.mnt/btrfs_hdd  btrfs  noatime,compress=zstd,discard=async  0 0" >> /etc/fstab
+sudo echo "LABEL=storage  /home/quijada/.mnt/samsung  btrfs  noatime,compress=zstd,ssd,discard=async,space_cache=v2  0 0" >> /etc/fstab
+sudo echo "LABEL=btrfs_hdd  /home/quijada/.mnt/btrfs_hdd  btrfs  noatime,compress=zstd,space_cache=v2  0 0" >> /etc/fstab
 
 mkdir -p $HOME/Documents
 mkdir -p $HOME/Downloads
