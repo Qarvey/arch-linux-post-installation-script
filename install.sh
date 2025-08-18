@@ -5,17 +5,20 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd $HOME
 
 mkdir -p $HOME/.mnt/samsung
-sudo echo "LABEL=storage  /home/quijada/.mnt/samsung  btrfs  noatime,compress=zstd,discard=async  0 0" >> /etc/fstab
-
 mkdir -p $HOME/.mnt/btrfs_hdd
+
+sudo echo "LABEL=storage  /home/quijada/.mnt/samsung  btrfs  noatime,compress=zstd,discard=async  0 0" >> /etc/fstab
 sudo echo "LABEL=btrfs_hdd  /home/quijada/.mnt/btrfs_hdd  btrfs  noatime,compress=zstd,discard=async  0 0" >> /etc/fstab
+
+mkdir -p $HOME/Documents
+mkdir -p $HOME/Downloads
+mkdir -p $HOME/Pictures
+mkdir -p $HOME/Videos
 
 ln -s $HOME/.mnt/btrfs_hdd/@files/Documents $HOME/Documents
 ln -s $HOME/.mnt/btrfs_hdd/@files/Downloads $HOME/Downloads
 ln -s $HOME/.mnt/btrfs_hdd/@files/Pictures $HOME/Pictures
 ln -s $HOME/.mnt/btrfs_hdd/@files/Videos $HOME/Videos
-
-xdg-user-dirs-update
 
 sudo pacman -S --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
@@ -32,6 +35,8 @@ cp -v ${SCRIPT_DIR}/config.toml $HOME/.config/metapac/config.toml
 cp -rv ${SCRIPT_DIR}/groups/ $HOME/.config/metapac/groups/
 metapac unmanaged > $HOME/.config/metapac/groups/all.toml
 metapac sync
+
+xdg-user-dirs-update
 
 echo 'EDITOR=micro' >> $HOME/.bashrc
 read -r -d '' FISH_SNIPPET <<'EOF'
