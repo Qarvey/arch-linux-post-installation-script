@@ -4,6 +4,7 @@ arch = [
     "base-devel",
     "linux",
     "linux-firmware",
+    "mkinitcpio",
     "grub",
     "yay",
     "yay-debug",
