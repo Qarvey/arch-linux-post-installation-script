@@ -10,7 +10,7 @@ arch = [
     "xdg-desktop-portal-gtk",
 
     # Services
-    "swaync",
+    "dunst",
     "polkit-gnome",
 
     # Apps and tools
