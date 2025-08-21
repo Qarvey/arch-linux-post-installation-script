@@ -20,6 +20,8 @@ arch = [
 
     "clipse", # Clipboard
 
+    "hellwal", # Color palette generator
+
     # Media & misc apps
     "mpv",
     "celluloid",
