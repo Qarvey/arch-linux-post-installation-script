@@ -37,17 +37,6 @@ metapac sync
 
 xdg-user-dirs-update
 
-# echo 'EDITOR=micro' >> $HOME/.bashrc
-# read -r -d '' FISH_SNIPPET <<'EOF'
-# if [[ $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${BASH_EXECUTION_STRING} && ${SHLVL} == 1 ]]
-# then
-#     shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=''
-#     exec fish $LOGIN_OPTION
-# fi
-# EOF
-# echo -e '$FISH_SNIPPET' >> $HOME/.bashrc
-# source $HOME/.bashrc
-
 USER=$(whoami)
 if ! getent group realtime > /dev/null; then
     sudo groupadd realtime
