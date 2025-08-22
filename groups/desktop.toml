@@ -1,6 +1,7 @@
 arch = [
     # Session & services
     "accountsservice",
+    "bash-completion",
     "xdg-user-dirs",
     "xdg-utils",
     { package = "lidm", hooks = { after_install = [ "sudo", "systemctl", "enable", "lidm" ] } }, # Display manager
