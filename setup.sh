@@ -37,16 +37,16 @@ metapac sync
 
 xdg-user-dirs-update
 
-echo 'EDITOR=micro' >> $HOME/.bashrc
-read -r -d '' FISH_SNIPPET <<'EOF'
-if [[ $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${BASH_EXECUTION_STRING} && ${SHLVL} == 1 ]]
-then
-    shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=''
-    exec fish $LOGIN_OPTION
-fi
-EOF
-echo -e '$FISH_SNIPPET' >> $HOME/.bashrc
-source $HOME/.bashrc
+# echo 'EDITOR=micro' >> $HOME/.bashrc
+# read -r -d '' FISH_SNIPPET <<'EOF'
+# if [[ $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${BASH_EXECUTION_STRING} && ${SHLVL} == 1 ]]
+# then
+#     shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=''
+#     exec fish $LOGIN_OPTION
+# fi
+# EOF
+# echo -e '$FISH_SNIPPET' >> $HOME/.bashrc
+# source $HOME/.bashrc
 
 USER=$(whoami)
 if ! getent group realtime > /dev/null; then
@@ -68,3 +68,7 @@ cp -rv ${SCRIPT_DIR}/hypr/ $HOME/.config/hypr/
 # sudo echo "wifi.backend=iwd" >> /etc/NetworkManager/NetworkManager.conf
 
 # sudo systemctl restart NetworkManager
+
+chsh -s /usr/bin/fish
+echo 'set -gx EDITOR micro' >> ~/.config/fish/config.fish
+echo 'set -gx VISUAL micro' >> ~/.config/fish/config.fish
