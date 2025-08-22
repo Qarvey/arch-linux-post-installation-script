@@ -70,5 +70,5 @@ cp -rv ${SCRIPT_DIR}/hypr/ $HOME/.config/hypr/
 # sudo systemctl restart NetworkManager
 
 chsh -s /usr/bin/fish
-echo 'set -gx EDITOR micro' >> ~/.config/fish/config.fish
-echo 'set -gx VISUAL micro' >> ~/.config/fish/config.fish
+echo 'set -gx EDITOR micro' >> $HOME/.config/fish/config.fish
+echo 'set -gx VISUAL micro' >> $HOME/.config/fish/config.fish
