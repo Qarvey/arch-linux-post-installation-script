@@ -1,5 +1,22 @@
 #!/bin/bash
 
+fish_shell_setup() {
+    read -r -d '' FISH_SNIPPET <<'EOF'
+    if [[ $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${BASH_EXECUTION_STRING} && ${SHLVL} == 1 ]]
+    then
+        shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=''
+        exec fish $LOGIN_OPTION
+    fi
+    EOF
+    
+    echo -e '$FISH_SNIPPET' >> $HOME/.bashrc
+    source $HOME/.bashrc
+
+    chsh -s /usr/bin/fish
+    echo 'set -gx EDITOR micro' >> $HOME/.config/fish/config.fish
+    echo 'set -gx VISUAL micro' >> $HOME/.config/fish/config.fish
+}
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 cd $HOME
@@ -68,7 +85,3 @@ sudo echo "[device]" >> /etc/NetworkManager/NetworkManager.conf
 sudo echo "wifi.backend=iwd" >> /etc/NetworkManager/NetworkManager.conf
 
 sudo systemctl restart NetworkManager
-
-chsh -s /usr/bin/fish
-echo 'set -gx EDITOR micro' >> $HOME/.config/fish/config.fish
-echo 'set -gx VISUAL micro' >> $HOME/.config/fish/config.fish
