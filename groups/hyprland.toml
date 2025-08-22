@@ -14,7 +14,6 @@ arch = [
     "polkit-gnome",
 
     # Apps and tools
-    "nwg-panel", # Status bar
     "nwg-look", # GTK theming
     "nwg-displays", # Display management
     "kitty", # Recommended terminal
