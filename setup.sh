@@ -60,14 +60,14 @@ echo 'hwdec=auto' >> $HOME/.config/mpv/mpv.conf
 mkdir -p $HOME/.config/hypr
 cp -rv ${SCRIPT_DIR}/hypr/ $HOME/.config/hypr/
 
-# sudo systemctl stop wpa_supplicant
-# sudo systemctl disable wpa_supplicant
-# sudo systemctl mask wpa_supplicant
+sudo systemctl stop wpa_supplicant
+sudo systemctl disable wpa_supplicant
+sudo systemctl mask wpa_supplicant
 
-# sudo echo "[device]" >> /etc/NetworkManager/NetworkManager.conf
-# sudo echo "wifi.backend=iwd" >> /etc/NetworkManager/NetworkManager.conf
+sudo echo "[device]" >> /etc/NetworkManager/NetworkManager.conf
+sudo echo "wifi.backend=iwd" >> /etc/NetworkManager/NetworkManager.conf
 
-# sudo systemctl restart NetworkManager
+sudo systemctl restart NetworkManager
 
 chsh -s /usr/bin/fish
 echo 'set -gx EDITOR micro' >> $HOME/.config/fish/config.fish
