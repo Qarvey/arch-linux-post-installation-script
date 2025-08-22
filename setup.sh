@@ -58,6 +58,8 @@ sudo echo "wifi.backend=iwd" >> /etc/NetworkManager/NetworkManager.conf
 
 sudo systemctl restart NetworkManager
 
+sudo modprobe i2c-dev
+
 chsh -s /usr/bin/fish
 echo 'set -gx EDITOR micro' >> $HOME/.config/fish/config.fish
 echo 'set -gx VISUAL micro' >> $HOME/.config/fish/config.fish
