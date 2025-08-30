@@ -7,7 +7,6 @@ arch = [
     "mkinitcpio",
     "grub",
     "yay",
-    "yay-debug",
     "metapac",
     
     "linux-headers",
