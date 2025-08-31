@@ -12,7 +12,6 @@ arch = [
     "libgsf",
     "poppler-glib",
     "gst-libav",
-    "gst-plugin-pipewire",
     "gst-plugins-bad",
     "gst-plugins-ugly",
 
