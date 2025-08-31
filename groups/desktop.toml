@@ -9,7 +9,6 @@ arch = [
     # Thumbnails & previews
     "tumbler",
     "ffmpegthumbnailer",
-    "ffmpeg-audio-thumbnailer",
     "gst-libav",
     "gst-plugin-pipewire",
     "gst-plugins-bad",
