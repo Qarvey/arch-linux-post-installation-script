@@ -10,9 +10,10 @@ arch = [
     "pipewire-jack",
     "wireplumber",
     "rtkit",
+    "gst-plugin-pipewire",
+    "wiremix",
 
     # Audio extras
     "easyeffects",
-    "lsp-plugins",
-    "wiremix"
+    "lsp-plugins"
 ]
