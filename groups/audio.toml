@@ -13,6 +13,11 @@ arch = [
     "gst-plugin-pipewire",
     "wiremix",
 
+    # GStreamer codecs
+    "gst-libav",
+    "gst-plugins-bad",
+    "gst-plugins-ugly",
+
     # Audio extras
     "easyeffects",
     "lsp-plugins"
