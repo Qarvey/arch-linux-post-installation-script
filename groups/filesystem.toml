@@ -9,7 +9,7 @@ arch = [
     "udiskie",
 
     # Archive utilities
-    "file-roller",
+    "xarchiver",
     "cdrtools",
     "dpkg",
     "7zip",
