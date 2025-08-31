@@ -9,12 +9,12 @@ arch = [
     # Thumbnails & previews
     "tumbler",
     "ffmpegthumbnailer",
+    "libgsf",
+    "poppler-glib",
     "gst-libav",
     "gst-plugin-pipewire",
     "gst-plugins-bad",
     "gst-plugins-ugly",
-    "libgsf",
-    "poppler-glib",
 
     "clipse", # Clipboard
 
