@@ -15,7 +15,6 @@ arch = [
     "gst-plugins-ugly",
     "libgsf",
     "poppler-glib",
-    "folderpreview",
 
     "clipse", # Clipboard
 
@@ -26,11 +25,10 @@ arch = [
     "celluloid",
     "flameshot",
     "gthumb",
-    "papers",
 
     # File managers
     "superfile", # TUI
-    "pcmanfm-gtk3", # GUI
+    "thunar", # GUI
 
     # General apps
     "legcord-bin", # Discord client
