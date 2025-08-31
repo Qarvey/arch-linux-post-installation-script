@@ -1,6 +1,5 @@
 arch = [
     # Session & services
-    "accountsservice",
     "bash-completion",
     "xdg-user-dirs",
     "xdg-utils",
