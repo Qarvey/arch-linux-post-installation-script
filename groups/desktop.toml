@@ -11,9 +11,6 @@ arch = [
     "ffmpegthumbnailer",
     "libgsf",
     "poppler-glib",
-    "gst-libav",
-    "gst-plugins-bad",
-    "gst-plugins-ugly",
 
     "clipse", # Clipboard
 
