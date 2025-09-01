@@ -4,27 +4,22 @@ arch = [
     "base-devel",
     "linux",
     "linux-firmware",
-    "mkinitcpio",
-    "grub",
-    "yay",
-    "metapac",
-    
-    "linux-headers",
-    "dkms",
-    "wget",
+    "limine", # or `grub`
+    "efibootmgr",
+
     "acpid",
-    "iproute2",
-    "findutils",
-    "sed",
-    "rsync",
     "git",
-    "ghostmirror", # `reflector` alternative
-    "micro",
-    "realtime-privileges",
+    "linux-headers",
+    "micro", # or preferred terminal text editor
+    "mkinitcpio",
+    "wget",
 
     # Package management helpers
+    "yay",
+    "metapac",
     "downgrade",
     "pacman-contrib",
+    "ghostmirror", # `reflector` alternative
     "rebuild-detector",
     "pacleaner"
 ]
