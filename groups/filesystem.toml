@@ -1,5 +1,5 @@
 arch = [
-    # Disk tools
+    # Disk utilities
     "btrfs-progs",
     "gparted",
     "udisks2",
@@ -7,11 +7,14 @@ arch = [
     "gvfs-mtp",
     "udiskie",
 
-    # Archive utilities
+    # Archiver
     "xarchiver",
     "dpkg",
     "7zip",
     "unrar",
     "unzip",
-    "zip"
+    "zip",
+
+    # File utilities
+    "rsync"
 ]
