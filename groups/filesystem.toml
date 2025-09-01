@@ -1,6 +1,5 @@
 arch = [
     # Disk tools
-    "efibootmgr",
     "btrfs-progs",
     "gparted",
     "udisks2",
@@ -10,10 +9,8 @@ arch = [
 
     # Archive utilities
     "xarchiver",
-    "cdrtools",
     "dpkg",
     "7zip",
-    "rpmextract",
     "unrar",
     "unzip",
     "zip"
