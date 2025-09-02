@@ -1,10 +1,7 @@
 arch = [
     # Disk utilities
-    "btrfs-progs",
     "gparted",
     "udisks2",
-    "gvfs",
-    "gvfs-mtp",
     "udiskie",
 
     # Archiver
