@@ -11,24 +11,17 @@ mkdir -p $HOME/Downloads
 mkdir -p $HOME/Pictures
 mkdir -p $HOME/Videos
 
-sudo echo "LABEL=storage  /home/quijada/.mnt/samsung  btrfs  defaults,noatime,compress=zstd  0 0" >> /etc/fstab
-sudo echo "LABEL=btrfs_hdd  /home/quijada/.mnt/btrfs_hdd  btrfs  defaults,noatime,compress=zstd  0 0" >> /etc/fstab
+# sudo echo "LABEL=storage  /home/quijada/.mnt/samsung  btrfs  defaults,noatime,compress=zstd  0 0" >> /etc/fstab
+# sudo echo "LABEL=btrfs_hdd  /home/quijada/.mnt/btrfs_hdd  btrfs  defaults,noatime,compress=zstd  0 0" >> /etc/fstab
 
-ln -s $HOME/.mnt/btrfs_hdd/@files/Documents $HOME/Documents
-ln -s $HOME/.mnt/btrfs_hdd/@files/Downloads $HOME/Downloads
-ln -s $HOME/.mnt/btrfs_hdd/@files/Pictures $HOME/Pictures
-ln -s $HOME/.mnt/btrfs_hdd/@files/Videos $HOME/Videos
-
-sudo pacman -S --needed git base-devel
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-cd ..
-rm -rf yay
+# ln -s $HOME/.mnt/btrfs_hdd/@files/Documents $HOME/Documents
+# ln -s $HOME/.mnt/btrfs_hdd/@files/Downloads $HOME/Downloads
+# ln -s $HOME/.mnt/btrfs_hdd/@files/Pictures $HOME/Pictures
+# ln -s $HOME/.mnt/btrfs_hdd/@files/Videos $HOME/Videos
 
 ${SCRIPT_DIR}/display-managers/lidm/lidm-service.sh
 
-yay -S metapac
+paru -S metapac
 mkdir -p $HOME/.config/metapac/groups
 cp -v ${SCRIPT_DIR}/config.toml $HOME/.config/metapac/config.toml
 cp -rv ${SCRIPT_DIR}/groups/ $HOME/.config/metapac/groups/
