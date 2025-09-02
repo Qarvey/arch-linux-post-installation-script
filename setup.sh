@@ -19,14 +19,14 @@ ln -s $HOME/.mnt/WDC/@files/Downloads $HOME/Downloads
 ln -s $HOME/.mnt/WDC/@files/Pictures $HOME/Pictures
 ln -s $HOME/.mnt/WDC/@files/Videos $HOME/Videos
 
-sudo pacman -S --needed git base-devel
+sudo pacman -S --noconfirm --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 cd ..
 rm -rf yay
 
-yay -S metapac
+yay -S --noconfirm metapac
 mkdir -p $HOME/.config/metapac/groups
 cp -v ${SCRIPT_DIR}/config.toml $HOME/.config/metapac/config.toml
 cp -rv ${SCRIPT_DIR}/groups/. $HOME/.config/metapac/groups/
@@ -54,7 +54,7 @@ sudo systemctl mask wpa_supplicant
 echo -e "[device]\nwifi.backend=iwd" | sudo tee -a /etc/NetworkManager/NetworkManager.conf
 sudo systemctl restart NetworkManager
 
-yay -Rns wpa_supplicant
+yay -Rns --noconfirm wpa_supplicant
 
 sudo modprobe i2c-dev
 sudo usermod -aG i2c $USER
