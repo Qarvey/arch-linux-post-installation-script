@@ -31,5 +31,15 @@ arch = [
 
     # Optional extras
     "python-defusedxml",
-    "python-packaging"
+    "python-packaging",
+    
+    "acpid",
+    "wget",
+
+    # Package management helpers
+    "downgrade",
+    "pacman-contrib",
+    "ghostmirror", # `reflector` alternative
+    "rebuild-detector",
+    "pacleaner"
 ]
