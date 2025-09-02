@@ -4,20 +4,21 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 cd $HOME
 
-mkdir -p $HOME/.mnt/samsung
-mkdir -p $HOME/.mnt/btrfs_hdd
-mkdir -p $HOME/Documents
-mkdir -p $HOME/Downloads
-mkdir -p $HOME/Pictures
-mkdir -p $HOME/Videos
+rm -rf $HOME/Documents
+rm -rf $HOME/Downloads
+rm -rf $HOME/Pictures
+rm -rf $HOME/Videos
 
-# sudo echo "LABEL=storage  /home/quijada/.mnt/samsung  btrfs  defaults,noatime,compress=zstd  0 0" >> /etc/fstab
-# sudo echo "LABEL=btrfs_hdd  /home/quijada/.mnt/btrfs_hdd  btrfs  defaults,noatime,compress=zstd  0 0" >> /etc/fstab
+# mkdir -p $HOME/.mnt/SAMSUNG
+# mkdir -p $HOME/.mnt/WDC
 
-# ln -s $HOME/.mnt/btrfs_hdd/@files/Documents $HOME/Documents
-# ln -s $HOME/.mnt/btrfs_hdd/@files/Downloads $HOME/Downloads
-# ln -s $HOME/.mnt/btrfs_hdd/@files/Pictures $HOME/Pictures
-# ln -s $HOME/.mnt/btrfs_hdd/@files/Videos $HOME/Videos
+# sudo echo "LABEL=storage  /home/quijada/.mnt/SAMSUNG  btrfs  subvol=/@storage,defaults,noatime,compress=zstd,commit=120  0 0" >> /etc/fstab
+# sudo echo "LABEL=btrfs_hdd  /home/quijada/.mnt/WDC  btrfs  defaults,noatime,compress=zstd,commit=120  0 0" >> /etc/fstab
+
+ln -s $HOME/.mnt/WDC/@files/Documents $HOME/Documents
+ln -s $HOME/.mnt/WDC/@files/Downloads $HOME/Downloads
+ln -s $HOME/.mnt/WDC/@files/Pictures $HOME/Pictures
+ln -s $HOME/.mnt/WDC/@files/Videos $HOME/Videos
 
 sudo pacman -S --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
