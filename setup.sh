@@ -33,7 +33,7 @@ rm -rf yay
 yay -S metapac
 mkdir -p $HOME/.config/metapac/groups
 cp -v ${SCRIPT_DIR}/config.toml $HOME/.config/metapac/config.toml
-cp -rv ${SCRIPT_DIR}/groups/ $HOME/.config/metapac/groups/
+cp -rv ${SCRIPT_DIR}/groups/. $HOME/.config/metapac/groups/
 metapac unmanaged > $HOME/.config/metapac/groups/minimal-cachyos-base.toml
 metapac sync
 
