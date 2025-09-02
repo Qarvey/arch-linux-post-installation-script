@@ -3,7 +3,7 @@ enabled_backends = ["arch"]
 hostname_groups_enabled = true
 
 [hostname_groups]
-archlinux-personal = [
+cachy = [
   "base",
   "hardware",
   "filesystem",
@@ -16,4 +16,4 @@ archlinux-personal = [
 ]
 
 [arch]
-package_manager = "paru"
+package_manager = "yay"
