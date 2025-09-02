@@ -16,8 +16,9 @@ arch = [
     # Apps and tools
     "nwg-look", # GTK theming
     "nwg-displays", # Display management
+    "nwg-panel",
     "kitty", # Recommended terminal
-    "walker-bin", # Launcher
+    "walker", # Launcher
     "wev", # Input debug
 
     # Clipboard
