@@ -3,7 +3,7 @@ arch = [
     "bash-completion",
     "xdg-user-dirs",
     "xdg-utils",
-    { package = "ly", hooks = { after_install = [ "sudo", "systemctl", "enable", "ly.service" ] } }, # Display manager
+    { package = "ly", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "ly.service" ] } }, # Display manager
     # { package = "lidm", hooks = { after_install = [ "sudo", "systemctl", "enable", "lidm" ] } }, # Display manager
 
     # Thumbnails & previews
