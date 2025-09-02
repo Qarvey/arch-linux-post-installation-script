@@ -1,8 +1,6 @@
 arch = [
     # Drive utilities
-    "gparted",
-    "udisks2",
-    "udiskie",
+    
 
     # Archiver
     "xarchiver",
