@@ -26,8 +26,6 @@ makepkg -si
 cd ..
 rm -rf yay
 
-${SCRIPT_DIR}/display-managers/lidm/lidm-service.sh
-
 yay -S metapac
 mkdir -p $HOME/.config/metapac/groups
 cp -v ${SCRIPT_DIR}/config.toml $HOME/.config/metapac/config.toml
