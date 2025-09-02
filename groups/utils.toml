@@ -2,7 +2,6 @@ arch = [
     # System monitoring
     "glances",
     "hwinfo",
-    "inxi",
     "btop",
     "gdu",
 
