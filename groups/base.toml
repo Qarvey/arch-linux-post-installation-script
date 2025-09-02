@@ -1,22 +1,8 @@
 arch = [
-    # Core
-    "base",
-    "base-devel",
-    "linux",
-    "linux-firmware",
-    "limine", # or `grub`
-    "efibootmgr",
-
     "acpid",
-    "git",
-    "linux-headers",
-    "micro", # or preferred terminal text editor
-    "mkinitcpio",
     "wget",
 
     # Package management helpers
-    "yay",
-    "metapac",
     "downgrade",
     "pacman-contrib",
     "ghostmirror", # `reflector` alternative
