@@ -1,19 +1,11 @@
 arch = [
     # AMD
     "amd-ucode",
-    "vulkan-radeon",
-    "lib32-vulkan-radeon",
 
     # Mesa
-    "mesa",
-    "lib32-mesa",
     "libva-mesa-driver",
     "lib32-libva-mesa-driver",
     "mesa-utils",
-
-    # Vulkan
-    "vulkan-icd-loader",
-    "lib32-vulkan-icd-loader",
 
     # Power management
     "power-profiles-daemon",
