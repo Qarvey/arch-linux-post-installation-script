@@ -54,11 +54,11 @@ sudo systemctl mask wpa_supplicant
 
 sudo echo "[device]" >> /etc/NetworkManager/NetworkManager.conf
 sudo echo "wifi.backend=iwd" >> /etc/NetworkManager/NetworkManager.conf
-
 sudo systemctl restart NetworkManager
 
-sudo modprobe i2c-dev
+yay -Rns wpa_supplicant
 
+sudo modprobe i2c-dev
 sudo usermod -aG i2c $USER
 
 chsh -s /usr/bin/fish
