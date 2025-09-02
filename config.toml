@@ -16,4 +16,4 @@ archlinux-personal = [
 ]
 
 [arch]
-package_manager = "yay"
+package_manager = "paru"
