@@ -2,11 +2,5 @@ arch = [
     # Drive utilities
     
 
-    # Archiver
-    "xarchiver",
-    "dpkg",
-    "7zip",
-    "unrar",
-    "unzip",
-    "zip",
+    
 ]
