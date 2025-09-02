@@ -7,7 +7,6 @@ arch = [
     # PipeWire
     "pipewire-pulse",
     "pipewire-alsa",
-    "pipewire-jack",
     "wireplumber",
     "rtkit",
     "gst-plugin-pipewire",
