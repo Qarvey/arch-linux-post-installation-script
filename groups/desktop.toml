@@ -1,10 +1,8 @@
 arch = [
     # Session & services
-    "bash-completion",
     "xdg-user-dirs",
     "xdg-utils",
     { package = "ly", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "ly.service" ] } }, # Display manager
-    # { package = "lidm", hooks = { after_install = [ "sudo", "systemctl", "enable", "lidm" ] } }, # Display manager
 
     # Thumbnails & previews
     "tumbler",
@@ -12,29 +10,31 @@ arch = [
     "libgsf",
     "poppler-glib",
 
-    "clipse", # Clipboard
-
-    "hellwal", # Color palette generator
-
-    # Media & misc apps
-    "mpv",
-    "celluloid",
+    # Apps
+    "floorp-bin", # Browser
+    "mpv", # Media player
+    "mpv-uosc",
+    "viewnior",
     "flameshot",
-    "gthumb",
+    "legcord-bin", # Discord client
+    "onlyoffice-bin", # Office suite
+    "hellwal", # Color palette generator
+    "clipse", # Clipboard
 
     # File managers
     "superfile", # TUI
     "thunar", # GUI
-
-    # General apps
-    "legcord-bin", # Discord client
-    "onlyoffice-bin", # Office suite
+    "catfish",
+    "gvfs",
+    "gvfs-mtp",
+    "thunar-archive-plugin",
+    "thunar-volman",
 
     # Gaming
     "steam",
     "gamescope",
-    "protonup-qt-bin",
+    "protonup-qt",
 
-    # Shells
+    # Shell
     "fish"
 ]
