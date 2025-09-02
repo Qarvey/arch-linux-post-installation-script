@@ -1,14 +1,8 @@
 arch = [
-    # AMD
-    "amd-ucode",
-
     # Mesa
     "libva-mesa-driver",
     "lib32-libva-mesa-driver",
     "mesa-utils",
-
-    # Power management
-    # "power-profiles-daemon",
 
     # Drive utilities
     { package = "smartmontools", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "smartd" ] } },
@@ -18,4 +12,7 @@ arch = [
 
     # Performance
     "realtime-privileges"
+
+    # Power management
+    # "power-profiles-daemon"
 ]
