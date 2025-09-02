@@ -8,7 +8,7 @@ arch = [
     "mesa-utils",
 
     # Power management
-    "power-profiles-daemon",
+    # "power-profiles-daemon",
 
     # Drive utilities
     { package = "smartmontools", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "smartd" ] } },
