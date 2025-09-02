@@ -29,6 +29,14 @@ arch = [
     "thunar-archive-plugin",
     "thunar-volman",
 
+    # Archiver
+    "xarchiver",
+    "dpkg",
+    "7zip",
+    "unrar",
+    "unzip",
+    "zip",
+
     # Gaming
     "steam",
     "gamescope",
