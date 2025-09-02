@@ -1,5 +1,5 @@
 arch = [
-    # Disk utilities
+    # Drive utilities
     "gparted",
     "udisks2",
     "udiskie",
@@ -11,7 +11,4 @@ arch = [
     "unrar",
     "unzip",
     "zip",
-
-    # File utilities
-    "rsync"
 ]
