@@ -18,7 +18,6 @@ mkdir -p $HOME/.mnt/WDC
 echo -e "\nUUID=$(lsblk -no UUID "$(findmnt -n -o SOURCE / | sed 's/\[.*\]//')")  /home/quijada/.mnt/SAMSUNG  btrfs  subvol=/@storage,defaults,noatime,compress=zstd,commit=120  0 0" | sudo tee -a /etc/fstab
 echo "LABEL=WDC  /home/quijada/.mnt/WDC  btrfs  defaults,noatime,compress=zstd,commit=120  0 0" | sudo tee -a /etc/fstab
 
-
 ln -s $HOME/.mnt/WDC/@files/Documents $HOME/Documents
 ln -s $HOME/.mnt/WDC/@files/Downloads $HOME/Downloads
 ln -s $HOME/.mnt/WDC/@files/Pictures $HOME/Pictures
@@ -56,8 +55,10 @@ sudo systemctl stop wpa_supplicant
 sudo systemctl disable wpa_supplicant
 sudo systemctl mask wpa_supplicant
 
-sudo echo "[device]" >> /etc/NetworkManager/NetworkManager.conf
-sudo echo "wifi.backend=iwd" >> /etc/NetworkManager/NetworkManager.conf
+# sudo echo "[device]" >> /etc/NetworkManager/NetworkManager.conf
+# sudo echo "wifi.backend=iwd" >> /etc/NetworkManager/NetworkManager.conf
+
+echo -e "[device]\nwifi.backend=iwd" | sudo tee -a /etc/NetworkManager/NetworkManager.conf
 sudo systemctl restart NetworkManager
 
 yay -Rns wpa_supplicant
