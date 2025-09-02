@@ -4,10 +4,8 @@ hostname_groups_enabled = true
 
 [hostname_groups]
 cachy = [
-  "minimal-cachyos",
-  "base",
+  "minimal-cachyos-base",
   "hardware",
-  "filesystem",
   "network",
   "audio",
   "utils",
