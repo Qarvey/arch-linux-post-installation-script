@@ -1,7 +1,6 @@
 arch = [
     # Session & services
     "xdg-user-dirs",
-    "xdg-utils",
     { package = "ly", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "ly.service" ] } }, # Display manager
 
     # Thumbnails & previews
