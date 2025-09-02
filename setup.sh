@@ -12,8 +12,12 @@ rm -rf $HOME/Videos
 mkdir -p $HOME/.mnt/SAMSUNG
 mkdir -p $HOME/.mnt/WDC
 
-sudo echo "\nUUID=$(lsblk -no UUID "$(findmnt -n -o SOURCE / | sed 's/\[.*\]//')")  /home/quijada/.mnt/SAMSUNG  btrfs  subvol=/@storage,defaults,noatime,compress=zstd,commit=120  0 0" >> /etc/fstab
-sudo echo "LABEL=WDC  /home/quijada/.mnt/WDC  btrfs  defaults,noatime,compress=zstd,commit=120  0 0" >> /etc/fstab
+# sudo echo "\nUUID=$(lsblk -no UUID "$(findmnt -n -o SOURCE / | sed 's/\[.*\]//')")  /home/quijada/.mnt/SAMSUNG  btrfs  subvol=/@storage,defaults,noatime,compress=zstd,commit=120  0 0" >> /etc/fstab
+# sudo echo "LABEL=WDC  /home/quijada/.mnt/WDC  btrfs  defaults,noatime,compress=zstd,commit=120  0 0" >> /etc/fstab
+
+echo -e "\nUUID=$(lsblk -no UUID "$(findmnt -n -o SOURCE / | sed 's/\[.*\]//')")  /home/quijada/.mnt/SAMSUNG  btrfs  subvol=/@storage,defaults,noatime,compress=zstd,commit=120  0 0" | sudo tee -a /etc/fstab
+echo "LABEL=WDC  /home/quijada/.mnt/WDC  btrfs  defaults,noatime,compress=zstd,commit=120  0 0" | sudo tee -a /etc/fstab
+
 
 ln -s $HOME/.mnt/WDC/@files/Documents $HOME/Documents
 ln -s $HOME/.mnt/WDC/@files/Downloads $HOME/Downloads
