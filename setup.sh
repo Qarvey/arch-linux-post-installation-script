@@ -19,9 +19,16 @@ mkdir -p $HOME/Videos
 # ln -s $HOME/.mnt/btrfs_hdd/@files/Pictures $HOME/Pictures
 # ln -s $HOME/.mnt/btrfs_hdd/@files/Videos $HOME/Videos
 
+sudo pacman -S --needed git base-devel
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd ..
+rm -rf yay
+
 ${SCRIPT_DIR}/display-managers/lidm/lidm-service.sh
 
-paru -S metapac
+yay -S metapac
 mkdir -p $HOME/.config/metapac/groups
 cp -v ${SCRIPT_DIR}/config.toml $HOME/.config/metapac/config.toml
 cp -rv ${SCRIPT_DIR}/groups/ $HOME/.config/metapac/groups/
