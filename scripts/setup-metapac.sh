@@ -36,7 +36,7 @@ sed -i "s/^PLACEHOLDER = \[/[$(hostname)] = [/" "${METAPAC_CONFIG}"
 
 rm -rf $HOME/.config/metapac
 mkdir -p $HOME/.config/metapac/groups
-cp -v ${SCRIPT_DIR}/config.toml $HOME/.config/metapac/config.toml
+cp -v ${METAPAC_CONFIG} $HOME/.config/metapac/config.toml
 cp -rv ${SCRIPT_DIR}/groups/. $HOME/.config/metapac/groups/
 if [[ -e ${SCRIPT_DIR}/groups/minimal-cachyos-base.toml ]]; then
     echo -e "File 'minimal-cachyos-base.toml' already exists.\nIt contains all the packages in your system and declares them for `metapac`."
