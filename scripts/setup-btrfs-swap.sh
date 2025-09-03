@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -euo pipefail
-
 TEMP_MOUNTPOINT=$(mktemp -d /tmp/mnt.XXXXXX)
 SWAP_SIZE=$(awk '/MemTotal:/ {print int(($2/1024/1024)+0.999)}' /proc/meminfo)
 
