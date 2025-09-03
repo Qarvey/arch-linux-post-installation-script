@@ -25,3 +25,5 @@ echo -e "\nUUID=$(lsblk -no UUID ${ROOT_DEVICE})  /swap  btrfs  subvol=/@swap,no
 echo "Activating '/swap/swapfile'..."
 sudo swapon /swap/swapfile
 echo "/swap/swapfile  none  swap  defaults,discard  0 0" | sudo tee -a /etc/fstab
+
+touch "${FLAGS}/part1-setup-btrfs-swap.flag"
