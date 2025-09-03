@@ -1,9 +1,5 @@
 #!/bin/bash
 
-set -euo pipefail
-
-ROOT_DEVICE=$(findmnt -n -o SOURCE / | sed 's/\[.*\]//')
-
 echo "Creating Btrfs subvolume '/@storage' in '${ROOT_DEVICE}'..."
 sudo btrfs subvolume create /@storage
 
