@@ -39,7 +39,7 @@ if [[ ! -e ${PART2_FLAG} ]]; then
     echo "Adding user '$(whoami)' to group 'realtime'..."
     sudo usermod -aG realtime "$(whoami)"
     
-    echo "Enabling `mpv` hardware acceleration..."
+    echo "Enabling 'mpv' hardware acceleration..."
     mkdir -p $HOME/.config/mpv
     echo 'hwdec=auto' >> $HOME/.config/mpv/mpv.conf
     
@@ -47,24 +47,24 @@ if [[ ! -e ${PART2_FLAG} ]]; then
     mkdir -p $HOME/.config/hypr
     cp -rv ${SCRIPT_DIR}/hypr/ $HOME/.config/hypr/
     
-    echo "Disabling `wpa_supplicant`..."
+    echo "Disabling 'wpa_supplicant'..."
     sudo systemctl stop wpa_supplicant
     sudo systemctl disable wpa_supplicant
     sudo systemctl mask wpa_supplicant
     
-    echo "Replacing `wpa_supplicant` with `iwd` as WiFi backend..."
+    echo "Replacing 'wpa_supplicant' with 'iwd' as WiFi backend..."
     echo -e "[device]\nwifi.backend=iwd" | sudo tee -a /etc/NetworkManager/NetworkManager.conf
     sudo systemctl restart NetworkManager
     
-    echo "Uninstalling `wpa_supplicant`..."
+    echo "Uninstalling 'wpa_supplicant'..."
     yay -Rns --noconfirm wpa_supplicant
     
-    echo "Loading the `i2c-dev` module..."
+    echo "Loading the 'i2c-dev' module..."
     sudo modprobe i2c-dev
     echo "Adding user '$(whoami)' to group 'i2c'..."
     sudo usermod -aG i2c $(whoami)
     
-    echo "Setting `micro` as default text editor for Fish..."
+    echo "Setting 'micro' as default text editor for Fish..."
     echo 'set -gx EDITOR micro' >> $HOME/.config/fish/config.fish
     # echo 'set -gx VISUAL micro' >> $HOME/.config/fish/config.fish
     
