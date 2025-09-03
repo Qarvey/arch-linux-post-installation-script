@@ -2,6 +2,7 @@
 
 set -euo pipefail
 
+ROOT_DEVICE=$(findmnt -n -o SOURCE / | sed 's/\[.*\]//')
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PART1_FLAG="${SCRIPT_DIR}/flags/part1.flag"
 
