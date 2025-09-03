@@ -1,7 +1,5 @@
 arch = [
     # Mesa
-    "libva-mesa-driver",
-    "lib32-libva-mesa-driver",
     "mesa-utils",
 
     # Drive utilities
