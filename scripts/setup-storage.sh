@@ -3,7 +3,7 @@
 TEMP_MOUNTPOINT=$(mktemp -d /tmp/mnt.XXXXXX)
 sudo mount -o subvolid=5 ${ROOT_DEVICE} ${TEMP_MOUNTPOINT}
 if [ -d "${TEMP_MOUNTPOINT}/@storage" ]; then
-    echo "Btrfs subvolume '/@storage' already exists in '${ROOT_DEVICE}'..."
+    echo "Btrfs subvolume '/@storage' already exists in '${ROOT_DEVICE}'."
 else
     echo "Creating Btrfs subvolume '/@storage' in '${ROOT_DEVICE}'..."
     sudo btrfs subvolume create ${TEMP_MOUNTPOINT}/@storage
