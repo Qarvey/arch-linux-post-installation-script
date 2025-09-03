@@ -32,3 +32,5 @@ else
     echo "Configuring LABEL ${WD_1TB_LABEL} to mount at '${WD_1TB_MOUNTPOINT}' in 'fstab'..."
     echo "LABEL=${WD_1TB_LABEL}  ${WD_1TB_MOUNTPOINT}  btrfs  defaults,noatime,compress=zstd,commit=120  0 0" | sudo tee -a /etc/fstab
 fi
+
+touch "${FLAGS}/part1-setup-storage.flag"
