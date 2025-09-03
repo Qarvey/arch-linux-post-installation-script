@@ -1,0 +1,18 @@
+enabled_backends = ["arch"]
+
+hostname_groups_enabled = true
+
+[hostname_groups]
+PLACEHOLDER = [
+  "minimal-cachyos-base",
+  "hardware",
+  "network",
+  "audio",
+  "utils",
+  "fonts",
+  "desktop",
+  "hyprland"
+]
+
+[arch]
+package_manager = "yay"
