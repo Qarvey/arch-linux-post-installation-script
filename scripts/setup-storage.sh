@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Setting up storage..."
+
 TEMP_MOUNTPOINT=$(mktemp -d /tmp/mnt.XXXXXX)
 sudo mount -o subvolid=5 ${ROOT_DEVICE} ${TEMP_MOUNTPOINT}
 if [ -d "${TEMP_MOUNTPOINT}/@storage" ]; then
