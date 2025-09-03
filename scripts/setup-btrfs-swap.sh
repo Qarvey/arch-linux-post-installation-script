@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Setting up Btrfs swap subvolume..."
+
 TEMP_MOUNTPOINT=$(mktemp -d /tmp/mnt.XXXXXX)
 SWAP_SIZE=$(awk '/MemTotal:/ {print int(($2/1024/1024)+0.999)}' /proc/meminfo)
 
@@ -26,4 +28,4 @@ echo "Activating '/swap/swapfile'..."
 sudo swapon /swap/swapfile
 echo "/swap/swapfile  none  swap  defaults,discard  0 0" | sudo tee -a /etc/fstab
 
-touch "${FLAGS}/part1-setup-btrfs-swap.flag"
+touch "${FLAGS}/part1-${SCRIPT}.flag"
