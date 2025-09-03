@@ -6,7 +6,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 echo "Creating Btrfs subvolume '/@storage' in '$(findmnt -n -o SOURCE / | sed 's/\[.*\]//')'..."
 sudo btrfs subvolume create /@storage
 
-SAMSUNG_STORAGE_UUID = "UUID=$(lsblk -no UUID "$(findmnt -n -o SOURCE / | sed 's/\[.*\]//')")"
+SAMSUNG_STORAGE_UUID = $(lsblk -no UUID "$(findmnt -n -o SOURCE / | sed 's/\[.*\]//')")
 SAMSUNG_STORAGE_MOUNTPOINT = "$HOME/.mnt/SAMSUNG@STORAGE"
 mkdir -p $SAMSUNG_STORAGE_MOUNTPOINT
 if grep -q "UUID=${SAMSUNG_STORAGE_UUID}.*${SAMSUNG_STORAGE_MOUNTPOINT}" /etc/fstab; then
