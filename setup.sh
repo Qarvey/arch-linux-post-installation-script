@@ -1,10 +1,10 @@
 #!/bin/bash
-
 set -euo pipefail
 sudo -v
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-cd $HOME
+echo "Creating Btrfs subvolume '/@storage' in '$(findmnt -n -o SOURCE / | sed 's/\[.*\]//')'..."
+sudo btrfs subvolume create /@storage
 
 SAMSUNG_STORAGE_UUID = "UUID=$(lsblk -no UUID "$(findmnt -n -o SOURCE / | sed 's/\[.*\]//')")"
 SAMSUNG_STORAGE_MOUNTPOINT = "$HOME/.mnt/SAMSUNG@STORAGE"
@@ -26,19 +26,6 @@ else
     echo "LABEL=${WD_1TB_LABEL}  ${WD_1TB_MOUNTPOINT}  btrfs  defaults,noatime,compress=zstd,commit=120  0 0" | sudo tee -a /etc/fstab
 fi
 
-echo "Symlinking user directories in '~/.mnt/$WD_1TB_LABEL/' to home directory..."
-rm -rf $HOME/Documents
-ln -s $WD_1TB_MOUNTPOINT/@files/Documents $HOME/Documents
-
-rm -rf $HOME/Downloads
-ln -s $WD_1TB_MOUNTPOINT/@files/Downloads $HOME/Downloads
-
-rm -rf $HOME/Pictures
-ln -s $WD_1TB_MOUNTPOINT/@files/Pictures $HOME/Pictures
-
-rm -rf $HOME/Videos
-ln -s $WD_1TB_MOUNTPOINT/@files/Videos $HOME/Videos
-
 echo "Updating system..."
 sudo pacman -Syu --no-confirm
 
@@ -48,6 +35,7 @@ if pacman -Q paru &>/dev/null; then
 fi
 
 echo "Attempting to install `yay`..."
+cd $HOME
 if ! pacman -Q yay &>/dev/null; then
     sudo pacman -S --noconfirm --needed git base-devel
     git clone https://aur.archlinux.org/yay.git
@@ -72,20 +60,29 @@ mkdir -p $HOME/.config/metapac/groups
 cp -v ${SCRIPT_DIR}/config.toml $HOME/.config/metapac/config.toml
 cp -rv ${SCRIPT_DIR}/groups/. $HOME/.config/metapac/groups/
 if [[ -e ${SCRIPT_DIR}/groups/minimal-cachyos-base.toml ]]; then
-    while true; do
-        echo "File 'minimal-cachyos-base.toml' already exists. It contains all the packages in your system."
-        read -t 10 -rp "Regenerate? (y/N) [default No in 10s]: " ANSWER
-        case "$ANSWER" in
-            [Yy]* ) metapac unmanaged > ${SCRIPT_DIR}/groups/minimal-cachyos-base.toml; break;;
-            [Nn]* | "" ) break;;
-            * ) echo "Please answer with [y]es or [n]o."
-        esac
-    done
+    echo -e "File 'minimal-cachyos-base.toml' already exists.\nIt contains all the packages in your system and declares them for `metapac`."
+else
+    metapac unmanaged > ${SCRIPT_DIR}/groups/minimal-cachyos-base.toml
 fi
 cp -v ${SCRIPT_DIR}/groups/minimal-cachyos-base.toml $HOME/.config/metapac/groups/minimal-cachyos-base.toml
 
 echo "Attempting to install packages declared in the `metapac` groups..."
 metapac sync
+
+###
+
+echo "Symlinking user directories in '~/.mnt/$WD_1TB_LABEL/' to home directory..."
+rm -rf $HOME/Documents
+ln -s $WD_1TB_MOUNTPOINT/@files/Documents $HOME/Documents
+
+rm -rf $HOME/Downloads
+ln -s $WD_1TB_MOUNTPOINT/@files/Downloads $HOME/Downloads
+
+rm -rf $HOME/Pictures
+ln -s $WD_1TB_MOUNTPOINT/@files/Pictures $HOME/Pictures
+
+rm -rf $HOME/Videos
+ln -s $WD_1TB_MOUNTPOINT/@files/Videos $HOME/Videos
 
 xdg-user-dirs-update
 
