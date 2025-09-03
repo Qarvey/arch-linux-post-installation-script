@@ -2,9 +2,8 @@
 
 set -euo pipefail
 
-ROOT_DEVICE=$(findmnt -n -o SOURCE / | sed 's/\[.*\]//')
 TEMP_MOUNTPOINT=$(mktemp -d /tmp/mnt.XXXXXX)
-SWAP_SIZE=awk '/MemTotal:/ {print int(($2/1024/1024)+0.999)}' /proc/meminfo
+SWAP_SIZE=$(awk '/MemTotal:/ {print int(($2/1024/1024)+0.999)}' /proc/meminfo)
 
 sudo mount -o subvolid=5 ${ROOT_DEVICE} ${TEMP_MOUNTPOINT}
 
