@@ -14,9 +14,9 @@ chmod +x ${SCRIPT_DIR}/scripts/*.sh
 # PART 1
 
 if [[ ! -e ${PART1_FLAG} ]]; then
-    bash ${SCRIPT_DIR}/scripts/setup-storage.sh
-    bash ${SCRIPT_DIR}/scripts/setup-btrfs-swap.sh
-    bash ${SCRIPT_DIR}/scripts/setup-metapac.sh
+    source ${SCRIPT_DIR}/scripts/setup-storage.sh
+    source ${SCRIPT_DIR}/scripts/setup-btrfs-swap.sh
+    source ${SCRIPT_DIR}/scripts/setup-metapac.sh
     touch ${PART1_FLAG}
 
     echo "${SCRIPT_DIR}/setup.sh" | sudo tee -a ~/.bash_profile
