@@ -1,56 +1,30 @@
 #!/bin/bash
 
 set -euo pipefail
-sudo -v
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PART1_FLAG="${SCRIPT_DIR}/flags/part1.flag"
 
-chmod +x ${SCRIPT_DIR}/scripts/setup-storage.sh
-bash ${SCRIPT_DIR}/scripts/setup-storage.sh
+[[ -e ${PART1_FLAG} ]] && echo "Continuing setup..."
 
-echo "Updating system..."
-sudo pacman -Syu --no-confirm
+sudo -v
 
-if pacman -Q paru &>/dev/null; then
-    echo "`paru` found. Attempting to uninstall..."
-    sudo -Rns --no-confirm paru
+chmod +x ${SCRIPT_DIR}/scripts/*.sh
+
+# PART 1
+
+if [[ ! -e ${PART1_FLAG} ]]; then
+    bash ${SCRIPT_DIR}/scripts/setup-storage.sh
+    bash ${SCRIPT_DIR}/scripts/setup-btrfs-swap.sh
+    bash ${SCRIPT_DIR}/scripts/setup-metapac.sh
+    touch ${PART1_FLAG}
+
+    echo "${SCRIPT_DIR}/setup.sh" | sudo tee -a ~/.bash_profile
+    
+    reboot
 fi
 
-echo "Attempting to install `yay`..."
-cd $HOME
-if ! pacman -Q yay &>/dev/null; then
-    sudo pacman -S --noconfirm --needed git base-devel
-    git clone https://aur.archlinux.org/yay.git
-    cd yay
-    makepkg -si
-    cd ..
-    rm -rf yay
-else
-    echo "`yay` is already installed."
-fi
-
-echo "Attempting to install `metapac`..."
-if ! pacman -Q metapac &>/dev/null; then
-    yay -S --noconfirm metapac
-else
-    echo "`metapac` is already installed."
-fi
-
-echo "Initializing `metapac` configuration..."
-rm -rf $HOME/.config/metapac
-mkdir -p $HOME/.config/metapac/groups
-cp -v ${SCRIPT_DIR}/config.toml $HOME/.config/metapac/config.toml
-cp -rv ${SCRIPT_DIR}/groups/. $HOME/.config/metapac/groups/
-if [[ -e ${SCRIPT_DIR}/groups/minimal-cachyos-base.toml ]]; then
-    echo -e "File 'minimal-cachyos-base.toml' already exists.\nIt contains all the packages in your system and declares them for `metapac`."
-else
-    metapac unmanaged > ${SCRIPT_DIR}/groups/minimal-cachyos-base.toml
-fi
-cp -v ${SCRIPT_DIR}/groups/minimal-cachyos-base.toml $HOME/.config/metapac/groups/minimal-cachyos-base.toml
-
-echo "Attempting to install packages declared in the `metapac` groups..."
-metapac sync
-
-###
+# PART 2
 
 echo "Symlinking user directories in '~/.mnt/$WD_1TB_LABEL/' to home directory..."
 rm -rf $HOME/Documents
