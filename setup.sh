@@ -4,7 +4,7 @@ set -euo pipefail
 
 ROOT_DEVICE=$(findmnt -n -o SOURCE / | sed 's/\[.*\]//')
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PART1_FLAG="${SCRIPT_DIR}/flags/part1.flag"
+FLAGS="${SCRIPT_DIR}/flags"
 
 if [[ -e ${PART1_FLAG} ]]; then
     echo "Continuing setup..."
@@ -16,22 +16,28 @@ sudo -v
 
 # PART 1
 
-if [[ ! -e ${PART1_FLAG} ]]; then
-    source ${SCRIPT_DIR}/scripts/remove-plymouth.sh
-    source ${SCRIPT_DIR}/scripts/setup-storage.sh
-    source ${SCRIPT_DIR}/scripts/setup-btrfs-swap.sh
-    source ${SCRIPT_DIR}/scripts/setup-metapac.sh
+if [[ ! -e "${FLAGS}/part1.flag" ]]; then
+    SCRIPTS=("remove-plymouth" "setup-storage" "setup-btrfs-swap" "setup-metapac")
+
+    for SCRIPT in "${SCRIPTS[@]}"; do
+        SCRIPT_FLAG="${FLAGS}/part1-${SCRIPT}.flag"
+
+        if [[ -e ${SCRIPT_FLAG} ]]; then
+            echo "Script '${SCRIPT}.sh' already executed."
+        else
+            echo "Executing script '${SCRIPT}.sh'..."
+            source ${SCRIPT_DIR}/scripts/${SCRIPT}.sh
+        fi
+    done
     
-    touch ${PART1_FLAG}
+    touch "${FLAGS}/part1.flag"
     echo "${SCRIPT_DIR}/setup.sh" | sudo tee -a $HOME/.bash_profile
     reboot
 fi
 
 # PART 2
 
-PART2_FLAG="${SCRIPT_DIR}/flags/part2.flag"
-
-if [[ ! -e ${PART2_FLAG} ]]; then
+if [[ ! -e "${FLAGS}/part2.flag" ]]; then
     source ${SCRIPT_DIR}/scripts/declare-hyprland-desktop.sh
     source ${SCRIPT_DIR}/scripts/setup-user-dirs.sh
     
@@ -70,7 +76,7 @@ if [[ ! -e ${PART2_FLAG} ]]; then
     # echo 'set -gx VISUAL micro' >> $HOME/.config/fish/config.fish
     
     sed -i "\|^${SCRIPT_DIR}/setup.sh\$|d" "$HOME/.bash_profile"
-    touch ${PART2_FLAG}
+    touch "${FLAGS}/part2.flag"
 
     echo "Setup complete!"
     for ((i=10; i>0; i--)); do
