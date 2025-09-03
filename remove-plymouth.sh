@@ -1,4 +1,6 @@
 #!/bin/bash
+# Refer to https://discuss.cachyos.org/t/tutorial-disable-or-remove-plymouth-boot-splash/10922
+
 set -e
 sudo -v
 
