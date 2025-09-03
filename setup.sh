@@ -4,8 +4,8 @@ set -euo pipefail
 sudo -v
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-chmod +x ${SCRIPT_DIR}/setup-storage.sh
-bash ${SCRIPT_DIR}/setup-storage.sh
+chmod +x ${SCRIPT_DIR}/scripts/setup-storage.sh
+bash ${SCRIPT_DIR}/scripts/setup-storage.sh
 
 echo "Updating system..."
 sudo pacman -Syu --no-confirm
