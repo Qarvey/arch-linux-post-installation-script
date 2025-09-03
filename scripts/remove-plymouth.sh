@@ -2,8 +2,8 @@
 # Refer to https://discuss.cachyos.org/t/tutorial-disable-or-remove-plymouth-boot-splash/10922
 
 echo "Removing 'plymouth'..."
+pacman -Q cachyos-plymouth-bootanimation &>/dev/null && sudo pacman -Rns --noconfirm cachyos-plymouth-bootanimation
 pacman -Q plymouth &>/dev/null && sudo pacman -Rns --noconfirm plymouth 
-pacman -Q cachyos-plymouth-animation &>/dev/null && sudo pacman -Rns --noconfirm cachyos-plymouth-bootanimation
 
 MKINITCPIO_CONF="/etc/mkinitcpio.conf"
 sudo cp ${MKINITCPIO_CONF} ${MKINITCPIO_CONF}.bak
