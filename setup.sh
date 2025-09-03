@@ -54,19 +54,12 @@ if [[ ! -e "${FLAGS}/part2.flag" ]]; then
     
     echo "Configuring Hyprland..."
     mkdir -p $HOME/.config/hypr
-    cp -rv ${SCRIPT_DIR}/hypr/ $HOME/.config/hypr/
+    cp -rv ${SCRIPT_DIR}/config/hypr/ $HOME/.config/hypr/
     
     echo "Disabling 'wpa_supplicant'..."
     sudo systemctl stop wpa_supplicant
     sudo systemctl disable wpa_supplicant
     sudo systemctl mask wpa_supplicant
-    
-    echo "Replacing 'wpa_supplicant' with 'iwd' as WiFi backend..."
-    echo -e "[device]\nwifi.backend=iwd" | sudo tee -a /etc/NetworkManager/NetworkManager.conf
-    sudo systemctl restart NetworkManager
-    
-    echo "Uninstalling 'wpa_supplicant'..."
-    yay -Rns --noconfirm wpa_supplicant
     
     echo "Loading the 'i2c-dev' module..."
     sudo modprobe i2c-dev
