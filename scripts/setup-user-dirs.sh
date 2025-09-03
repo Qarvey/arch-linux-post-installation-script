@@ -1,8 +1,8 @@
 #!/bin/bash
 
-WD_1TB_MOUNTPOINT = "$HOME/.mnt/WD-1TB"
+WD_1TB_MOUNTPOINT="$HOME/.mnt/WD-1TB"
 
-echo "Symlinking user directories in '~/.mnt/$WD_1TB_LABEL/' to home directory..."
+echo "Symlinking user directories in '${WD_1TB_MOUNTPOINT}' to home directory..."
 rm -rf $HOME/Documents
 ln -s $WD_1TB_MOUNTPOINT/@files/Documents $HOME/Documents
 
