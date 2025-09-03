@@ -65,6 +65,5 @@ yay -Rns --noconfirm wpa_supplicant
 sudo modprobe i2c-dev
 sudo usermod -aG i2c $USER
 
-chsh -s /usr/bin/fish
 echo 'set -gx EDITOR micro' >> $HOME/.config/fish/config.fish
 # echo 'set -gx VISUAL micro' >> $HOME/.config/fish/config.fish
