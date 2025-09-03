@@ -18,4 +18,4 @@ DEFAULT_LIMINE_CONF="/etc/default/limine"
 sudo cp ${DEFAULT_LIMINE_CONF} ${DEFAULT_LIMINE_CONF}.bak
 sudo sed -i -E 's/\bsplash\b//g; s/[[:space:]]{2,}/ /g; s/^[[:space:]]+|[[:space:]]+$//g' ${DEFAULT_LIMINE_CONF}
 
-touch "${FLAGS}/part1-remove-plymouth.flag"
+touch "${FLAGS}/part1-${SCRIPT}.flag"
