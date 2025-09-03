@@ -1,7 +1,6 @@
 #!/bin/bash
 
-set -e
-sudo -v
+set -euo pipefail
 
 ROOT_DEVICE=$(findmnt -n -o SOURCE / | sed 's/\[.*\]//')
 TEMP_MOUNTPOINT=$(mktemp -d /tmp/mnt.XXXXXX)
