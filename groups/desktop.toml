@@ -43,5 +43,5 @@ arch = [
     "protonup-qt",
 
     # Shell
-    { package = "fish", hooks = { after_install = [ "chsh", "-s", "/usr/bin/fish" ] } }
+    "fish"
 ]
