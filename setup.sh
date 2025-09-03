@@ -6,7 +6,7 @@ ROOT_DEVICE=$(findmnt -n -o SOURCE / | sed 's/\[.*\]//')
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 FLAGS="${SCRIPT_DIR}/flags"
 
-if [[ -e ${PART1_FLAG} ]]; then
+if [[ -e "${FLAGS}/part1.flag" ]]; then
     echo "Continuing setup..."
 else
     chmod +x ${SCRIPT_DIR}/scripts/*.sh
