@@ -3,14 +3,12 @@ enabled_backends = ["arch"]
 hostname_groups_enabled = true
 
 [hostname_groups]
-cachy = [
+PLACEHOLDER = [
   "minimal-cachyos-base",
   "hardware",
   "network",
   "audio",
   "utils",
-  "desktop",
-  "hyprland",
   "fonts"
 ]
 
