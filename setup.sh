@@ -17,6 +17,7 @@ sudo -v
 # PART 1
 
 if [[ ! -e ${PART1_FLAG} ]]; then
+    source ${SCRIPT_DIR}/scripts/remove-plymouth.sh
     source ${SCRIPT_DIR}/scripts/setup-storage.sh
     source ${SCRIPT_DIR}/scripts/setup-btrfs-swap.sh
     source ${SCRIPT_DIR}/scripts/setup-metapac.sh
