@@ -40,8 +40,25 @@ fi
 # PART 2
 
 if [[ ! -e "${FLAGS}/part2.flag" ]]; then
-    source ${SCRIPT_DIR}/scripts/declare-hyprland-desktop.sh
-    source ${SCRIPT_DIR}/scripts/setup-user-dirs.sh
+    echo "Adding groups 'desktop' and 'hyprland' to 'metapac' configuration..."
+    METAPAC_CONFIG="${SCRIPT_DIR}/part2-config.toml"
+    sed -i "s/^PLACEHOLDER = \[/$(hostname) = [/" "${METAPAC_CONFIG}"
+    cp -v ${METAPAC_CONFIG} $HOME/.config/metapac/config.toml
+    echo "Attempting to install packages declared in the new 'metapac' groups..."
+    metapac sync
+    
+    WD_1TB_MOUNTPOINT="$HOME/.mnt/WD-1TB"
+    echo "Symlinking user directories in '${WD_1TB_MOUNTPOINT}' to home directory..."
+    rm -rf $HOME/Documents
+    ln -s $WD_1TB_MOUNTPOINT/@files/Documents $HOME/Documents
+    rm -rf $HOME/Downloads
+    ln -s $WD_1TB_MOUNTPOINT/@files/Downloads $HOME/Downloads
+    rm -rf $HOME/Pictures
+    ln -s $WD_1TB_MOUNTPOINT/@files/Pictures $HOME/Pictures
+    rm -rf $HOME/Videos
+    ln -s $WD_1TB_MOUNTPOINT/@files/Videos $HOME/Videos
+    echo "Updating XDG user directories..."
+    xdg-user-dirs-update
     
     echo "Attempting to create group 'realtime'..."
     (getent group realtime > /dev/null) || sudo groupadd realtime
@@ -56,13 +73,10 @@ if [[ ! -e "${FLAGS}/part2.flag" ]]; then
     mkdir -p $HOME/.config/hypr
     cp -rv ${SCRIPT_DIR}/config/hypr/ $HOME/.config/hypr/
     
-    echo "Disabling 'wpa_supplicant'..."
-    sudo systemctl stop wpa_supplicant
-    sudo systemctl disable wpa_supplicant
-    sudo systemctl mask wpa_supplicant
-    
     echo "Loading the 'i2c-dev' module..."
     sudo modprobe i2c-dev
+    echo "Attempting to create group 'i2c'..."
+    (getent group i2c > /dev/null) || sudo groupadd i2c
     echo "Adding user '$(whoami)' to group 'i2c'..."
     sudo usermod -aG i2c $(whoami)
     
