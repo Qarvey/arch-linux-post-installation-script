@@ -27,6 +27,21 @@ fi
 
 # PART 2
 
+echo "Adding groups 'desktop' and 'hyprland' to `metapac` declaration..."
+METAPAC_CONFIG="${SCRIPT_DIR}/config.toml"
+NEW_METAPAC_GROUPS=("desktop" "hyprland")
+for val in "${NEW_METAPAC_GROUPS[@]}"; do
+    sed -i "/^\[hostname_groups\]/,/^\[/{ 
+        /^$(hostname) = \[/,/]/{
+            /]/i \  \"${val}\",
+        }
+    }" "${METAPAC_CONFIG}"
+done
+cp -v ${METAPAC_CONFIG} $HOME/.config/metapac/config.toml
+
+echo "Attempting to install packages declared in the new `metapac` groups..."
+metapac sync
+
 echo "Symlinking user directories in '~/.mnt/$WD_1TB_LABEL/' to home directory..."
 rm -rf $HOME/Documents
 ln -s $WD_1TB_MOUNTPOINT/@files/Documents $HOME/Documents
