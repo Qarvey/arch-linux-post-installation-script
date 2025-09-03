@@ -1,11 +1,11 @@
 #!/bin/bash
 
 echo "Updating system..."
-sudo pacman -Syu --no-confirm
+sudo pacman -Syu --noconfirm
 
 if pacman -Q paru &>/dev/null; then
     echo "'paru' found. Attempting to uninstall..."
-    sudo -Rns --no-confirm paru
+    sudo -Rns --noconfirm paru
 fi
 
 echo "Attempting to install 'yay'..."
