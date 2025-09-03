@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -euo pipefail
-
 echo "Updating system..."
 sudo pacman -Syu --no-confirm
 
@@ -31,6 +29,11 @@ else
 fi
 
 echo "Initializing `metapac` configuration..."
+
+METAPAC_CONFIG="${SCRIPT_DIR}/config.toml"
+
+sed -i "s/^PLACEHOLDER = \[/[$(hostname)] = [/" "${METAPAC_CONFIG}"
+
 rm -rf $HOME/.config/metapac
 mkdir -p $HOME/.config/metapac/groups
 cp -v ${SCRIPT_DIR}/config.toml $HOME/.config/metapac/config.toml
