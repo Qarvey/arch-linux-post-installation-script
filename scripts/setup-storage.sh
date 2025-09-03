@@ -35,4 +35,4 @@ else
     echo "LABEL=${WD_1TB_LABEL}  ${WD_1TB_MOUNTPOINT}  btrfs  defaults,noatime,compress=zstd,commit=120  0 0" | sudo tee -a /etc/fstab
 fi
 
-touch "${FLAGS}/part1-setup-storage.flag"
+touch "${FLAGS}/part1-${SCRIPT}.flag"
