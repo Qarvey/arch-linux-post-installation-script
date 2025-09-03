@@ -1,7 +1,7 @@
 arch = [
     # Session & services
     { package = "xdg-user-dirs", hooks = { after_install = [ "xdg-user-dirs-update" ] } },
-    { package = "ly", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "ly.service" ] } }, # Display manager
+    { package = "ly", hooks = { after_install = [ "sudo", "systemctl", "enable", "ly.service" ] } }, # Display manager
 
     # Thumbnails & previews
     "tumbler",
@@ -43,5 +43,5 @@ arch = [
     "protonup-qt",
 
     # Shell
-    "fish"
+    { package = "fish", hooks = { after_install = [ "chsh", "-s", "/usr/bin/fish" ] } }
 ]
