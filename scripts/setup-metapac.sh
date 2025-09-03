@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Setting up 'metapac'..."
+
 echo "Updating system..."
 sudo pacman -Syu --noconfirm
 
@@ -48,4 +50,4 @@ cp -v ${SCRIPT_DIR}/groups/minimal-cachyos-base.toml $HOME/.config/metapac/group
 echo "Attempting to install packages declared in the 'metapac' groups..."
 metapac sync
 
-touch "${FLAGS}/part1-setup-metapac.flag"
+touch "${FLAGS}/part1-${SCRIPT}.flag"
