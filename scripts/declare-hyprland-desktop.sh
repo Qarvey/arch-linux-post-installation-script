@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Adding groups 'desktop' and 'hyprland' to `metapac` declaration..."
+echo "Adding groups 'desktop' and 'hyprland' to 'metapac' declaration..."
 METAPAC_CONFIG="${SCRIPT_DIR}/config.toml"
 NEW_METAPAC_GROUPS=("desktop" "hyprland")
 for val in "${NEW_METAPAC_GROUPS[@]}"; do
@@ -12,5 +12,5 @@ for val in "${NEW_METAPAC_GROUPS[@]}"; do
 done
 cp -v ${METAPAC_CONFIG} $HOME/.config/metapac/config.toml
 
-echo "Attempting to install packages declared in the new `metapac` groups..."
+echo "Attempting to install packages declared in the new 'metapac' groups..."
 metapac sync
