@@ -7,7 +7,7 @@ A script to configure a minimal CachyOS installation to my needs. It does the fo
 - Installs and configures [`metapac`](https://github.com/ripytide/metapac), a declarative meta package manager
 - Declares and installs packages via `metapac`
 
-The `metapac` configuration assumes a "No desktop" CachyOS installation with only the following packages selected in the Calamares installer:
+The `metapac` configuration assumes a "No desktop" CachyOS installation with Limine as the bootloader and only the following packages selected in the Calamares installer:
 - The needed CachyOS packages
 - `networkmanager`
 - `ufw`
