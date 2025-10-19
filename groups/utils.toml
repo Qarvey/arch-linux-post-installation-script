@@ -1,4 +1,8 @@
 arch = [
+	# Security
+	"apparmor",
+	{ package = "apparmor.d-git", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "apparmor.service" ] } },
+	
     # System monitoring
     "hwinfo",
     "btop",
@@ -10,27 +14,19 @@ arch = [
     # GPU monitor and control
     { package = "lact", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "lactd" ] } },
 
-    # Optional extras
-    "python-defusedxml",
-    "python-packaging",
-    
-    "acpid",
-    "wget",
-
     # Package management helpers
     "downgrade",
-    "pacman-contrib",
-    "reflector",
-    "rebuild-detector",
     "pacleaner",
 
     # Performance
     "realtime-privileges",
-
-   # Security
-	"apparmor",
-	{ package = "apparmor.d-git", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "apparmor.service" ] } },
     
 	# Power management
 	"power-profiles-daemon",
+
+	# Optional extras
+    "python-defusedxml",
+    "python-packaging",
+    "acpid",
+    "wget",
 ]
