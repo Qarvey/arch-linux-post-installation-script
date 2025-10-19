@@ -1,27 +1,8 @@
 arch = [
     # System monitoring
-    "glances",
     "hwinfo",
     "btop",
     "gdu",
-
-    # Productivity
-    "meld",
-    "pv",
-    "rsync",
-    "tldr",
-    "entr",
-
-    # Search & navigation
-    "zoxide",
-    "ripgrep",
-    "fd",
-    "fzf",
-    "plocate",
-    "eza",
-    "bat",
-    "fastfetch",
-    "duf",
 
     # Clean up
     "rmlint",
@@ -39,7 +20,7 @@ arch = [
     # Package management helpers
     "downgrade",
     "pacman-contrib",
-    "ghostmirror", # `reflector` alternative
+    "reflector",
     "rebuild-detector",
     "pacleaner"
 ]
