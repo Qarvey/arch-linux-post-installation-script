@@ -1,7 +1,5 @@
 arch = [
-    # Core compositor
     "hyprland",
-    "hyprpaper",
 
     # Wayland support
     "qt5-wayland",
@@ -14,14 +12,14 @@ arch = [
     "polkit-gnome",
 
     # Apps and tools
+    "hyprpaper", # Wallpaper util.
     "nwg-look", # GTK theming
     "nwg-displays", # Display management
-    "nwg-panel",
+    "nwg-panel", # Status bar
     "kitty", # Recommended terminal
     "rofi", # Launcher
     "wev", # Input debug
-    "helium-browser-bin", # Browser
-    "micro", # Text editor
+    "firefox", # Browser
 
     # Clipboard
     "wl-clipboard",
