@@ -7,10 +7,4 @@ arch = [
     "gparted",
     "udisks2",
     "udiskie",
-
-    # Performance
-    "realtime-privileges"
-
-    # Power management
-    # "power-profiles-daemon"
 ]
