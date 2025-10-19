@@ -5,11 +5,6 @@ echo "Setting up 'metapac'..."
 echo "Updating system..."
 sudo pacman -Syu --noconfirm
 
-if pacman -Q paru &>/dev/null; then
-    echo "'paru' found. Attempting to uninstall..."
-    sudo -Rns --noconfirm paru
-fi
-
 echo "Attempting to install 'yay'..."
 cd $HOME
 if ! pacman -Q yay &>/dev/null; then
@@ -39,12 +34,12 @@ rm -rf $HOME/.config/metapac
 mkdir -p $HOME/.config/metapac/groups
 cp -v ${METAPAC_CONFIG} $HOME/.config/metapac/config.toml
 cp -rv ${SCRIPT_DIR}/groups/. $HOME/.config/metapac/groups/
-if [[ -e ${SCRIPT_DIR}/groups/minimal-cachyos-base.toml ]]; then
-    echo -e "File 'minimal-cachyos-base.toml' already exists.\nIt contains all the packages in your system and declares them for 'metapac'."
+if [[ -e ${SCRIPT_DIR}/groups/base.toml ]]; then
+    echo -e "File 'base.toml' already exists.\nIt contains all the packages in your system and declares them for 'metapac'."
 else
-    metapac unmanaged > ${SCRIPT_DIR}/groups/minimal-cachyos-base.toml
+    metapac unmanaged > ${SCRIPT_DIR}/groups/base.toml
 fi
-cp -v ${SCRIPT_DIR}/groups/minimal-cachyos-base.toml $HOME/.config/metapac/groups/minimal-cachyos-base.toml
+cp -v ${SCRIPT_DIR}/groups/base.toml $HOME/.config/metapac/groups/base.toml
 
 echo "Attempting to install packages declared in the 'metapac' groups..."
 metapac sync
