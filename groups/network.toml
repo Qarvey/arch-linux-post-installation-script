@@ -1,4 +1,5 @@
 arch = [
+    { package = "networkmanager", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "NetworkManager.service" ] } },
     "networkmanager-dmenu",
     { package = "openssh", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "sshd" ] } },
 ]
