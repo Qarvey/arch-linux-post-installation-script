@@ -10,18 +10,15 @@ arch = [
     "poppler-glib",
 
     # Apps
-    "floorp-bin", # Browser
+    "firefox", # Browser
     "mpv", # Media player
-    "mpv-uosc",
     "viewnior",
-    "flameshot",
     "legcord-bin", # Discord client
     "onlyoffice-bin", # Office suite
-    "hellwal", # Color palette generator
     "clipse", # Clipboard
 
     # File managers
-    "superfile", # TUI
+    "yazi", # TUI
     "thunar", # GUI
     "catfish",
     "gvfs",
@@ -31,7 +28,6 @@ arch = [
 
     # Archiver
     "xarchiver",
-    "dpkg",
     "7zip",
     "unrar",
     "unzip",
@@ -43,5 +39,5 @@ arch = [
     "protonup-qt",
 
     # Shell
-    { package = "fish", hooks = { after_install = [ "chsh", "-s", "/usr/bin/fish" ] } }
+    # { package = "fish", hooks = { after_install = [ "chsh", "-s", "/usr/bin/fish" ] } }
 ]
