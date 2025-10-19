@@ -4,7 +4,7 @@ hostname_groups_enabled = true
 
 [hostname_groups]
 PLACEHOLDER = [
-  "minimal-cachyos-base",
+  "base",
   "hardware",
   "network",
   "audio",
