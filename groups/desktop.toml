@@ -10,7 +10,6 @@ arch = [
     "poppler-glib",
 
     # Apps
-    "firefox", # Browser
     "mpv", # Media player
     "viewnior",
     "legcord-bin", # Discord client
