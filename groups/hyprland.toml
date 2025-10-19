@@ -20,6 +20,8 @@ arch = [
     "kitty", # Recommended terminal
     "rofi", # Launcher
     "wev", # Input debug
+    "helium-browser-bin", # Browser
+    "micro", # Text editor
 
     # Clipboard
     "wl-clipboard",
