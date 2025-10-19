@@ -70,8 +70,7 @@ if [[ ! -e "${FLAGS}/part2.flag" ]]; then
     echo 'hwdec=auto' >> $HOME/.config/mpv/mpv.conf
     
     echo "Configuring Hyprland..."
-    mkdir -p $HOME/.config/hypr
-    cp -rv ${SCRIPT_DIR}/config/hypr/ $HOME/.config/hypr/
+    cp -rv ${SCRIPT_DIR}/config/hypr $HOME/.config/
     
     echo "Loading the 'i2c-dev' module..."
     sudo modprobe i2c-dev
@@ -79,9 +78,12 @@ if [[ ! -e "${FLAGS}/part2.flag" ]]; then
     (getent group i2c > /dev/null) || sudo groupadd i2c
     echo "Adding user '$(whoami)' to group 'i2c'..."
     sudo usermod -aG i2c $(whoami)
+
+    echo "Setting 'micro' as default text editor for Bash..."
+    echo 'export EDITOR="micro"' >> $HOME/.bashrc
     
-    echo "Setting 'micro' as default text editor for Fish..."
-    echo 'set -gx EDITOR micro' >> $HOME/.config/fish/config.fish
+    # echo "Setting 'micro' as default text editor for Fish..."
+    # echo 'set -gx EDITOR micro' >> $HOME/.config/fish/config.fish
     # echo 'set -gx VISUAL micro' >> $HOME/.config/fish/config.fish
     
     sed -i "\|^${SCRIPT_DIR}/setup.sh\$|d" "$HOME/.bash_profile"
