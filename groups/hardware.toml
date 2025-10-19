@@ -7,4 +7,5 @@ arch = [
     "gparted",
     "udisks2",
     "udiskie",
+    "rsync",
 ]
