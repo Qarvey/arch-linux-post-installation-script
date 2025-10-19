@@ -34,12 +34,12 @@ rm -rf $HOME/.config/metapac
 mkdir -p $HOME/.config/metapac/groups
 cp -v ${METAPAC_CONFIG} $HOME/.config/metapac/config.toml
 cp -rv ${SCRIPT_DIR}/groups/. $HOME/.config/metapac/groups/
-if [[ -e ${SCRIPT_DIR}/groups/base.toml ]]; then
-    echo -e "File 'base.toml' already exists.\nIt contains all the packages in your system and declares them for 'metapac'."
+if [[ -e ${SCRIPT_DIR}/groups/core.toml ]]; then
+    echo -e "File 'core.toml' already exists.\nIt contains all the packages in your system and declares them for 'metapac'."
 else
-    metapac unmanaged > ${SCRIPT_DIR}/groups/base.toml
+    metapac unmanaged > ${SCRIPT_DIR}/groups/core.toml
 fi
-cp -v ${SCRIPT_DIR}/groups/base.toml $HOME/.config/metapac/groups/base.toml
+cp -v ${SCRIPT_DIR}/groups/core.toml $HOME/.config/metapac/groups/core.toml
 
 echo "Attempting to install packages declared in the 'metapac' groups..."
 metapac sync
