@@ -19,7 +19,7 @@ sudo -v
 # PART 1
 
 if [[ ! -e "${FLAGS}/part1.flag" ]]; then
-    SCRIPTS=("remove-plymouth" "setup-storage" "setup-btrfs-swap" "setup-metapac")
+    SCRIPTS=("setup-storage" "setup-btrfs-swap" "setup-metapac")
 
     for SCRIPT in "${SCRIPTS[@]}"; do
         SCRIPT_FLAG="${FLAGS}/part1-${SCRIPT}.flag"
