@@ -37,6 +37,9 @@ arch = [
     "gamescope",
     "protonup-qt",
 
+    # GPU monitor and control
+    { package = "lact", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "lactd" ] } },
+
     # Shell
     # { package = "fish", hooks = { after_install = [ "chsh", "-s", "/usr/bin/fish" ] } }
 ]
