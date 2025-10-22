@@ -14,11 +14,4 @@ arch = [
     # Vulkan
     "vulkan-icd-loader",
     "lib32-vulkan-icd-loader",
-
-    # Drive utilities
-    { package = "smartmontools", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "smartd" ] } },
-    "gparted",
-    "udisks2",
-    "udiskie",
-    "rsync",
 ]
