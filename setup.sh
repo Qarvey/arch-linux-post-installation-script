@@ -40,7 +40,7 @@ fi
 # PART 2
 
 if [[ ! -e "${FLAGS}/part2.flag" ]]; then
-    echo "Adding groups 'desktop' and 'hyprland' to 'metapac' configuration..."
+    echo "Adding groups 'hyprland', 'desktop' and 'fonts' to 'metapac' configuration..."
     METAPAC_CONFIG="${SCRIPT_DIR}/part2-config.toml"
     sed -i "s/^PLACEHOLDER = \[/$(hostname) = [/" "${METAPAC_CONFIG}"
     cp -v ${METAPAC_CONFIG} $HOME/.config/metapac/config.toml
