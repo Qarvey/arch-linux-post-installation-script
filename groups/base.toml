@@ -25,6 +25,8 @@ arch = [
 	"hwinfo",
 	"fastfetch",
 	"micro",
+	"btop",
+    "gdu",
 	"duf",
 	"bat",
 	"bash-completion",
