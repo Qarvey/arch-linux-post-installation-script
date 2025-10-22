@@ -3,12 +3,6 @@ arch = [
     "xdg-user-dirs",
     { package = "ly", hooks = { after_install = [ "sudo", "systemctl", "enable", "ly.service" ] } }, # Display manager
 
-    # Thumbnails & previews
-    "tumbler",
-    "ffmpegthumbnailer",
-    "libgsf",
-    "poppler-glib",
-
     # Apps
     "mpv", # Media player
     "viewnior",
@@ -24,6 +18,12 @@ arch = [
     "gvfs-mtp",
     "thunar-archive-plugin",
     "thunar-volman",
+
+    # Thumbnails & previews
+    "tumbler",
+    "ffmpegthumbnailer",
+    "libgsf",
+    "poppler-glib",
 
     # Archiver
     "xarchiver",
