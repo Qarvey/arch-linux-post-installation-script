@@ -9,9 +9,9 @@ PLACEHOLDER = [
   "utils",
   "audio",
   "graphics",
-  "fonts"
   "hyprland",
-  "desktop"
+  "desktop",
+  "fonts"
 ]
 
 [arch]
