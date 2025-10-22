@@ -1,0 +1,31 @@
+arch = [
+	# AMD microcode
+	"amd-ucode",
+
+	# Drive utilities
+	"btrfs-progs",
+
+	# Security
+	"apparmor",
+	{ package = "apparmor.d-git", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "apparmor.service" ] } },
+	
+	# Network
+	{ package = "networkmanager", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "NetworkManager.service" ] } },
+	{ package = "ufw", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "ufw.service" ] } },
+	"tufw",
+    { package = "openssh", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "sshd" ] } },
+
+	# Package management helpers
+	"reflector",
+	"pacman-contrib",
+	"rebuild-detector",
+	"yay",
+
+	# Utilities
+	"hwinfo",
+	"fastfetch",
+	"micro",
+	"duf",
+	"bat",
+	"bash-completion",
+]
