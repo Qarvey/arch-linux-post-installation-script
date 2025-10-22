@@ -1,6 +1,5 @@
 arch = [
     # AMD
-    "amd-ucode",
     "vulkan-radeon",
     "lib32-vulkan-radeon",
     
