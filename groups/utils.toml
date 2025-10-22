@@ -25,4 +25,7 @@ arch = [
     "udiskie",
     "rsync",
     "exfatprogs",
+
+	# XDG
+	"xdg-user-dirs",
 ]
