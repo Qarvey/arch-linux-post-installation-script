@@ -15,8 +15,6 @@ arch = [
     "legcord-bin", # Discord client
     "onlyoffice-bin", # Office suite
     "clipse", # Clipboard
-    "networkmanager-dmenu",
-    "tufw",
 
     # File managers
     "yazi", # TUI
