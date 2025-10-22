@@ -29,4 +29,12 @@ arch = [
     "python-packaging",
     "acpid",
     "wget",
+
+	# Drive utilities
+    { package = "smartmontools", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "smartd" ] } },
+    # "gparted",
+    "udisks2",
+    "udiskie",
+    "rsync",
+    "exfatprogs",
 ]
