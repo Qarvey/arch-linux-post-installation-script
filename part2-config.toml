@@ -4,14 +4,14 @@ hostname_groups_enabled = true
 
 [hostname_groups]
 PLACEHOLDER = [
+  "core",
   "base",
   "hardware",
-  "network",
   "audio",
   "utils",
   "fonts",
-  "desktop",
-  "hyprland"
+  "hyprland",
+  "desktop"
 ]
 
 [arch]
