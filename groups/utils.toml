@@ -2,9 +2,6 @@ arch = [
     # Clean up
     "rmlint",
 
-    # GPU monitor and control
-    { package = "lact", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "lactd" ] } },
-
     # Package management helpers
     "downgrade",
     "pacleaner",
