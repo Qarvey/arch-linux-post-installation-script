@@ -11,15 +11,17 @@ arch = [
     "dunst",
     "polkit-gnome",
 
-    # Apps and tools
+    # Tools
     "hyprpaper", # Wallpaper util.
     "nwg-look", # GTK theming
     "nwg-displays", # Display management
     "nwg-panel", # Status bar
+    "wev", # Input debug
+    
+    # Apps
     "kitty", # Recommended terminal
     "rofi", # Launcher
-    "wev", # Input debug
-    "firefox", # Browser
+    "floorp-bin", # Browser
 
     # Clipboard
     "wl-clipboard",
