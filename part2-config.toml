@@ -6,10 +6,10 @@ hostname_groups_enabled = true
 PLACEHOLDER = [
   "core",
   "base",
-  "hardware",
-  "audio",
   "utils",
-  "fonts",
+  "audio",
+  "graphics",
+  "fonts"
   "hyprland",
   "desktop"
 ]
