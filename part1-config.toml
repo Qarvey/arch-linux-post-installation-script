@@ -6,9 +6,9 @@ hostname_groups_enabled = true
 PLACEHOLDER = [
   "core",
   "base",
-  "hardware",
-  "audio",
   "utils",
+  "audio",
+  "graphics",
   "fonts"
 ]
 
