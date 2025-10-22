@@ -17,10 +17,11 @@ arch = [
     "nwg-displays", # Display management
     "nwg-panel", # Status bar
     "wev", # Input debug
+    "rofi", # Launcher
+    # "networkmanager-dmenu",
     
     # Apps
     "kitty", # Recommended terminal
-    "rofi", # Launcher
     "floorp-bin", # Browser
 
     # Clipboard
