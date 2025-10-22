@@ -1,13 +1,4 @@
 arch = [
-	# Security
-	"apparmor",
-	{ package = "apparmor.d-git", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "apparmor.service" ] } },
-	
-    # System monitoring
-    "hwinfo",
-    "btop",
-    "gdu",
-
     # Clean up
     "rmlint",
 
