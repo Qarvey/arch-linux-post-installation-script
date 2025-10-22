@@ -8,8 +8,7 @@ PLACEHOLDER = [
   "base",
   "utils",
   "audio",
-  "graphics",
-  "fonts"
+  "graphics"
 ]
 
 [arch]
