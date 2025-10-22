@@ -44,7 +44,7 @@ if [[ ! -e "${FLAGS}/part2.flag" ]]; then
     METAPAC_CONFIG="${SCRIPT_DIR}/part2-config.toml"
     sed -i "s/^PLACEHOLDER = \[/$(hostname) = [/" "${METAPAC_CONFIG}"
     cp -v ${METAPAC_CONFIG} $HOME/.config/metapac/config.toml
-    echo "Attempting to install packages declared in the new 'metapac' groups..."
+    echo "Attempting to install packages declared in the newly added 'metapac' groups..."
     metapac sync
     
     WD_1TB_MOUNTPOINT="$HOME/.mnt/WD-1TB"
@@ -65,19 +65,17 @@ if [[ ! -e "${FLAGS}/part2.flag" ]]; then
     echo "Adding user '$(whoami)' to group 'realtime'..."
     sudo usermod -aG realtime "$(whoami)"
     
-    echo "Enabling 'mpv' hardware acceleration..."
-    mkdir -p $HOME/.config/mpv
-    echo 'hwdec=auto' >> $HOME/.config/mpv/mpv.conf
+    echo "Setting up dotfiles..."
+    cp -rv ${SCRIPT_DIR}/config/* $HOME/.config/
+    # mkdir -p $HOME/.config/mpv
+    # echo 'hwdec=auto' >> $HOME/.config/mpv/mpv.conf
     
-    echo "Configuring Hyprland..."
-    cp -rv ${SCRIPT_DIR}/config/hypr $HOME/.config/
-    
-    echo "Loading the 'i2c-dev' module..."
-    sudo modprobe i2c-dev
-    echo "Attempting to create group 'i2c'..."
-    (getent group i2c > /dev/null) || sudo groupadd i2c
-    echo "Adding user '$(whoami)' to group 'i2c'..."
-    sudo usermod -aG i2c $(whoami)
+    # echo "Loading the 'i2c-dev' module..."
+    # sudo modprobe i2c-dev
+    # echo "Attempting to create group 'i2c'..."
+    # (getent group i2c > /dev/null) || sudo groupadd i2c
+    # echo "Adding user '$(whoami)' to group 'i2c'..."
+    # sudo usermod -aG i2c $(whoami)
 
     echo "Setting 'micro' as default text editor for Bash..."
     echo 'export EDITOR="micro"' >> $HOME/.bashrc
