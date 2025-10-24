@@ -11,7 +11,7 @@ mkdir -p ${FLAGS}
 sudo -v
 
 if [[ ! -e "${FLAGS}/setup-complete.flag" ]]; then
-    SCRIPTS=("setup-storage" "setup-btrfs-swap" "setup-metapac" "setup-home-dir")
+    SCRIPTS=("setup-storage" "setup-btrfs-swap" "setup-metapac")
     
     for SCRIPT in "${SCRIPTS[@]}"; do
         SCRIPT_FLAG="${FLAGS}/${SCRIPT}.flag"
