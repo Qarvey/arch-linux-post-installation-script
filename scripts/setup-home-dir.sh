@@ -15,4 +15,4 @@ ln -s $WD_1TB_MOUNTPOINT/@files/Videos $HOME/Videos
 echo "Updating XDG user directories..."
 xdg-user-dirs-update
 
-touch "${FLAGS}/${SCRIPT}.flag"
+touch ${SCRIPT_FLAG}
