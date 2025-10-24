@@ -34,6 +34,8 @@ if [[ ! -e "${FLAGS}/setup-complete.flag" ]]; then
 
     echo "Setting 'micro' as default text editor for Bash..."
     echo 'export EDITOR="micro"' >> $HOME/.bashrc
+
+    echo 'fastfetch' >> $HOME/.bashrc
     
     touch "${FLAGS}/setup-complete.flag"
     echo "Setup complete!"
