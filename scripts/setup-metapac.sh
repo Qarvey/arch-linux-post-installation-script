@@ -43,3 +43,5 @@ cp -v ${SCRIPT_DIR}/groups/core.toml $HOME/.config/metapac/groups/core.toml
 
 echo "Installing packages declared by 'metapac'"
 metapac sync
+
+touch "${FLAGS}/${SCRIPT}.flag"
