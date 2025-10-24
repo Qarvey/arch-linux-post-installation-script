@@ -1,12 +1,8 @@
 arch = [
     { package = "ly", hooks = { after_install = [ "sudo", "systemctl", "enable", "ly.service" ] } }, # Display manager
 
-    # Apps
-    "mpv", # Media player
-    "viewnior",
-    "legcord-bin", # Discord client
-    "onlyoffice-bin", # Office suite
-    "clipse", # Clipboard
+    # Tools
+    "btrfs-assistant",
 
     # File managers
     "yazi", # TUI
@@ -29,6 +25,13 @@ arch = [
     "unrar",
     "unzip",
     "zip",
+
+    # Apps
+    "mpv", # Media player
+    "viewnior",
+    "legcord-bin", # Discord client
+    "onlyoffice-bin", # Office suite
+    "clipse", # Clipboard
 
     # Gaming
     "steam",
