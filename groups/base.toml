@@ -22,7 +22,6 @@ arch = [
 	"reflector",
 	"pacman-contrib",
 	"rebuild-detector",
-	"yay",
 
 	# Utilities
 	"hwinfo",
