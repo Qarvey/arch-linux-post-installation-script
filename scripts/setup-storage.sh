@@ -33,6 +33,21 @@ if grep -q "LABEL=${WD_1TB_LABEL}.*${WD_1TB_MOUNTPOINT}" /etc/fstab; then
 else
     echo "Configuring LABEL ${WD_1TB_LABEL} to mount at '${WD_1TB_MOUNTPOINT}' in 'fstab'..."
     echo "LABEL=${WD_1TB_LABEL}  ${WD_1TB_MOUNTPOINT}  btrfs  defaults,noatime,compress=zstd,commit=120  0 0" | sudo tee -a /etc/fstab
+
+    echo "Setting up user directories..."
+    
+    echo "Temporarily mounting LABEL ${WD_1TB_LABEL} to '${WD_1TB_MOUNTPOINT}'..."
+    sudo mount -L ${WD_1TB_LABEL} ${WD_1TB_MOUNTPOINT}
+
+    echo "Symlinking user directories in '${WD_1TB_MOUNTPOINT}' to home directory..."
+    rm -rf $HOME/Documents
+    ln -s $WD_1TB_MOUNTPOINT/@files/Documents $HOME/Documents
+    rm -rf $HOME/Downloads
+    ln -s $WD_1TB_MOUNTPOINT/@files/Downloads $HOME/Downloads
+    rm -rf $HOME/Pictures
+    ln -s $WD_1TB_MOUNTPOINT/@files/Pictures $HOME/Pictures
+    rm -rf $HOME/Videos
+    ln -s $WD_1TB_MOUNTPOINT/@files/Videos $HOME/Videos
 fi
 
 touch ${SCRIPT_FLAG}
