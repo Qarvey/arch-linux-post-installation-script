@@ -4,6 +4,7 @@ echo "Setting up 'metapac'..."
 
 echo "Updating system..."
 sudo pacman -Syu --noconfirm
+sudo pacman -S inetutils --noconfirm
 
 echo "Attempting to install 'yay'..."
 cd $HOME
@@ -33,7 +34,7 @@ sed -i "s/^PLACEHOLDER = \[/$(hostname) = [/" "${METAPAC_CONFIG}"
 rm -rf $HOME/.config/metapac
 mkdir -p $HOME/.config/metapac/groups
 cp -v ${METAPAC_CONFIG} $HOME/.config/metapac/config.toml
-cp -rv ${SCRIPT_DIR}/groups/. $HOME/.config/metapac/groups/
+cp -rv ${SCRIPT_DIR}/groups/* $HOME/.config/metapac/groups/
 if [[ -e ${SCRIPT_DIR}/groups/core.toml ]]; then
     echo -e "File 'core.toml' already exists.\nIt adds the core packages of your system to metapac's declaration."
 else
