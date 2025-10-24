@@ -27,5 +27,5 @@ arch = [
     "exfatprogs",
 
 	# XDG
-	"xdg-user-dirs",
+    { package = "xdg-user-dirs", hooks = { after_install = [ "xdg-user-dirs-update" ] } },
 ]
