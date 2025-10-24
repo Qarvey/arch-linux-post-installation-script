@@ -8,6 +8,9 @@ arch = [
 	# Security
 	"apparmor",
 	{ package = "apparmor.d-git", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "apparmor.service" ] } },
+
+	# Snapshotting
+	"snapper",
 	
 	# Network
 	{ package = "networkmanager", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "NetworkManager.service" ] } },
