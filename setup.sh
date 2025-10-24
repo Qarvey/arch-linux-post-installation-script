@@ -44,7 +44,7 @@ if [[ ! -e "${FLAGS}/part2.flag" ]]; then
     METAPAC_CONFIG="${SCRIPT_DIR}/part2-config.toml"
     sed -i "s/^PLACEHOLDER = \[/$(hostname) = [/" "${METAPAC_CONFIG}"
     cp -v ${METAPAC_CONFIG} $HOME/.config/metapac/config.toml
-    echo "Attempting to install packages declared in the newly added 'metapac' groups..."
+    echo "Installing packages declared in the newly added 'metapac' groups..."
     metapac sync
     
     WD_1TB_MOUNTPOINT="$HOME/.mnt/WD-1TB"
