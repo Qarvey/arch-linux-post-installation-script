@@ -28,4 +28,4 @@ echo "Activating '/swap/swapfile'..."
 sudo swapon /swap/swapfile
 echo "/swap/swapfile  none  swap  defaults,discard  0 0" | sudo tee -a /etc/fstab
 
-touch "${FLAGS}/${SCRIPT}.flag"
+touch ${SCRIPT_FLAG}
