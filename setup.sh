@@ -11,7 +11,7 @@ mkdir -p ${FLAGS}
 sudo -v
 
 if [[ ! -e "${FLAGS}/setup-complete.flag" ]]; then
-    SCRIPTS=("setup-storage" "setup-btrfs-swap" "setup-metapac")
+    SCRIPTS=("setup-storage" "setup-btrfs-swap" "setup-metapac" "setup-misc")
     
     for SCRIPT in "${SCRIPTS[@]}"; do
         SCRIPT_FLAG="${FLAGS}/${SCRIPT}.flag"
@@ -23,19 +23,6 @@ if [[ ! -e "${FLAGS}/setup-complete.flag" ]]; then
             source ${SCRIPT_DIR}/scripts/${SCRIPT}.sh
         fi
     done
-    
-    echo "Creating group 'realtime'..."
-    (getent group realtime > /dev/null) || sudo groupadd realtime
-    echo "Adding user '$(whoami)' to group 'realtime'..."
-    sudo usermod -aG realtime "$(whoami)"
-    
-    echo "Setting up dotfiles..."
-    cp -rv ${SCRIPT_DIR}/config/* $HOME/.config/
-
-    echo "Setting 'micro' as default text editor for Bash..."
-    echo 'export EDITOR="micro"' >> $HOME/.bashrc
-
-    echo 'fastfetch' >> $HOME/.bashrc
     
     touch "${FLAGS}/setup-complete.flag"
     echo "Setup complete!"
