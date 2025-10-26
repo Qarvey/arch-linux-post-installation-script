@@ -28,7 +28,10 @@ fi
 
 echo "Initializing 'metapac' configuration..."
 
+METAPAC_CONFIG_NO_CORE="${SCRIPT_DIR}/config-no-core.toml"
 METAPAC_CONFIG="${SCRIPT_DIR}/config.toml"
+
+sed -i "s/^PLACEHOLDER = \[/$(hostname) = [/" "${METAPAC_CONFIG_NO_CORE}"
 sed -i "s/^PLACEHOLDER = \[/$(hostname) = [/" "${METAPAC_CONFIG}"
 
 if [[ -e $HOME/.config/metapac ]]; then
@@ -36,7 +39,7 @@ if [[ -e $HOME/.config/metapac ]]; then
 fi
 mkdir -p $HOME/.config/metapac
 
-cp -v ${METAPAC_CONFIG} $HOME/.config/metapac/config.toml
+cp -v ${METAPAC_CONFIG_NO_CORE} $HOME/.config/metapac/config.toml
 cp -rv ${SCRIPT_DIR}/groups $HOME/.config/metapac/
 
 if [[ -e ${SCRIPT_DIR}/groups/core.toml ]]; then
@@ -46,6 +49,7 @@ else
 fi
 
 cp -rv ${SCRIPT_DIR}/groups/core.toml $HOME/.config/metapac/groups/
+cp -v ${METAPAC_CONFIG} $HOME/.config/metapac/config.toml
 
 echo "Installing packages declared by 'metapac'"
 metapac sync
