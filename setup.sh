@@ -21,6 +21,31 @@ if [[ ! -e "${FLAGS}/setup-complete.flag" ]]; then
         else
             echo "Executing script '${SCRIPT}.sh'..."
             source ${SCRIPT_DIR}/scripts/${SCRIPT}.sh
+
+            while true; do
+                if ! read -t 10 -p "Continue? [Y/n] (auto-continues in 10s) " answer; then
+                    echo "Timed out — continuing by default."
+                fi
+            
+                # Default to Y if empty
+                answer=${answer:-Y}
+                answer=$(echo "$answer" | xargs)
+            
+                # Validate input
+                if [[ "$answer" =~ ^[YyNn]$ ]]; then
+                    break  # valid input, exit loop
+                else
+                    echo "Invalid input. Please enter Y or N."
+                fi
+            done
+            
+            # Act on valid input
+            if [[ "$answer" =~ ^[Nn]$ ]]; then
+                echo "Exiting script."
+                exit 1
+            else
+                echo "Continuing..."
+            fi
         fi
     done
     
