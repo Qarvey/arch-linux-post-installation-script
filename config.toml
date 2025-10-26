@@ -1,0 +1,18 @@
+enabled_backends = ["arch"]
+
+hostname_groups_enabled = true
+
+[hostname_groups]
+PLACEHOLDER = [
+  "core",
+  "base",
+  "utils",
+  "audio",
+  "graphics",
+  "hyprland",
+  "desktop",
+  "fonts"
+]
+
+[arch]
+package_manager = "yay"
