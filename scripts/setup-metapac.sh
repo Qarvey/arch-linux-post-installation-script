@@ -36,13 +36,14 @@ if [[ -e $HOME/.config/metapac ]]; then
 fi
 mkdir -p $HOME/.config/metapac
 
+cp -v ${METAPAC_CONFIG} $HOME/.config/metapac/config.toml
+
 if [[ -e ${SCRIPT_DIR}/groups/core.toml ]]; then
     echo -e "File 'core.toml' already exists.\nIt adds the core packages of your system to metapac's declaration."
 else
     metapac unmanaged > ${SCRIPT_DIR}/groups/core.toml
 fi
 
-cp -v ${METAPAC_CONFIG} $HOME/.config/metapac/config.toml
 cp -rv ${SCRIPT_DIR}/groups $HOME/.config/metapac/
 
 echo "Installing packages declared by 'metapac'"
