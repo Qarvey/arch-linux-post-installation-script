@@ -1,7 +1,4 @@
 arch = [
-	# AMD microcode
-	"amd-ucode",
-
 	# Drive utilities
 	"btrfs-progs",
 
@@ -11,6 +8,10 @@ arch = [
 
 	# Snapshotting
 	"snapper",
+
+	# Limine utils.
+	"limine-mkinitcpio-hook",
+	"limine-snapper-sync",
 	
 	# Network
 	{ package = "networkmanager", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "NetworkManager.service" ] } },
