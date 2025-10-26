@@ -32,15 +32,16 @@ METAPAC_CONFIG="${SCRIPT_DIR}/config.toml"
 sed -i "s/^PLACEHOLDER = \[/$(hostname) = [/" "${METAPAC_CONFIG}"
 
 rm -rf $HOME/.config/metapac
-mkdir -p $HOME/.config/metapac/groups
-cp -v ${METAPAC_CONFIG} $HOME/.config/metapac/config.toml
-cp -rv ${SCRIPT_DIR}/groups/* $HOME/.config/metapac/groups/
+mkdir -p $HOME/.config/metapac
+
 if [[ -e ${SCRIPT_DIR}/groups/core.toml ]]; then
     echo -e "File 'core.toml' already exists.\nIt adds the core packages of your system to metapac's declaration."
 else
     metapac unmanaged > ${SCRIPT_DIR}/groups/core.toml
 fi
-cp -v ${SCRIPT_DIR}/groups/core.toml $HOME/.config/metapac/groups/core.toml
+
+cp -v ${METAPAC_CONFIG} $HOME/.config/metapac/config.toml
+cp -rv ${SCRIPT_DIR}/groups $HOME/.config/metapac/
 
 echo "Installing packages declared by 'metapac'"
 metapac sync
