@@ -6,8 +6,6 @@ arch = [
     # Mesa
     "mesa",
     "lib32-mesa",
-    "libva-mesa-driver",
-    "lib32-libva-mesa-driver",
     "mesa-utils",
     
     # Vulkan
