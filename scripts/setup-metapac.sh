@@ -31,7 +31,9 @@ echo "Initializing 'metapac' configuration..."
 METAPAC_CONFIG="${SCRIPT_DIR}/config.toml"
 sed -i "s/^PLACEHOLDER = \[/$(hostname) = [/" "${METAPAC_CONFIG}"
 
-rm -rf $HOME/.config/metapac
+if [[ -e $HOME/.config/metapac ]]; then
+    rm -rf $HOME/.config/metapac
+fi
 mkdir -p $HOME/.config/metapac
 
 if [[ -e ${SCRIPT_DIR}/groups/core.toml ]]; then
