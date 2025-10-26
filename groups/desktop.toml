@@ -1,5 +1,5 @@
 arch = [
-    { package = "ly", hooks = { after_install = [ "sudo", "systemctl", "enable", "ly.service" ] } }, # Display manager
+    { package = "ly", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "ly.service" ] } }, # Display manager
 
     # Tools
     "btrfs-assistant",
