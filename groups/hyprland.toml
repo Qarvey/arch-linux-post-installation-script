@@ -22,7 +22,7 @@ arch = [
     
     # Apps
     "kitty", # Recommended terminal
-    "floorp-bin", # Browser
+    "firefox", # Browser
 
     # Clipboard
     "wl-clipboard",
