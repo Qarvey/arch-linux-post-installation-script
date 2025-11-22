@@ -3,6 +3,8 @@ arch = [
 
     # Tools
     "btrfs-assistant",
+    "gparted",
+    "xorg-xhost", # To make GParted work in Hyprland
 
     # File managers
     "yazi", # TUI
@@ -32,12 +34,18 @@ arch = [
     "legcord-bin", # Discord client
     "onlyoffice-bin", # Office suite
     "clipse", # Clipboard
+    "code",
+    "code-marketplace",
 
     # Gaming
     "steam",
     "gamescope",
     "protonup-qt",
+    "prismlauncher",
 
     # GPU monitor and control
     { package = "lact", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "lactd" ] } },
+
+    # Extra browser(s)
+    "helium-browser-bin",
 ]
