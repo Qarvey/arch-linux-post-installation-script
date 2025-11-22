@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=GParted (Root)
+Comment=Run GParted as root
+Exec=/home/quijada/bin/gparted-root.sh
+Icon=gparted
+Terminal=false
+Type=Application
+Categories=System;Utility;
