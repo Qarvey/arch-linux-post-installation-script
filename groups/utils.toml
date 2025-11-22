@@ -12,20 +12,26 @@ arch = [
 	# Power management
 	"power-profiles-daemon",
 
-	# Optional extras
-    "python-defusedxml",
-    "python-packaging",
-    "acpid",
-    "wget",
-
 	# Drive utilities
     { package = "smartmontools", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "smartd" ] } },
     "udisks2",
     "udiskie",
     "rsync",
     "exfatprogs",
-    # "gparted",
+	"cryptsetup",
+
+	# Network share
+	"copyparty",
+	"python-pillow",
+	"python-pyftpdlib",
+	"python-pyopenssl",
 
 	# XDG
     { package = "xdg-user-dirs", hooks = { after_install = [ "xdg-user-dirs-update" ] } },
+
+	# Optional extras
+    "python-defusedxml",
+    "python-packaging",
+    "acpid",
+    "wget",
 ]
