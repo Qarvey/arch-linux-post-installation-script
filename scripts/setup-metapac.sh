@@ -6,22 +6,22 @@ echo "Updating system..."
 sudo pacman -Syu --noconfirm
 sudo pacman -S inetutils --noconfirm
 
-echo "Attempting to install 'yay'..."
+echo "Attempting to install 'paru'..."
 cd $HOME
-if ! pacman -Q yay &>/dev/null; then
+if ! pacman -Q paru &>/dev/null; then
     sudo pacman -S --noconfirm --needed git base-devel
-    git clone https://aur.archlinux.org/yay.git
-    cd yay
+    git clone https://aur.archlinux.org/paru.git
+    cd paru
     makepkg -si
     cd ..
-    rm -rf yay
+    rm -rf paru
 else
-    echo "'yay' is already installed."
+    echo "'paru' is already installed."
 fi
 
 echo "Attempting to install 'metapac'..."
 if ! pacman -Q metapac &>/dev/null; then
-    yay -S --noconfirm metapac
+    paru -S --noconfirm metapac
 else
     echo "'metapac' is already installed."
 fi
