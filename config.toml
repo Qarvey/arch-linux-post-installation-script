@@ -15,4 +15,4 @@ PLACEHOLDER = [
 ]
 
 [arch]
-package_manager = "yay"
+package_manager = "paru"
