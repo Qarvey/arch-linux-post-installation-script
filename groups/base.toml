@@ -21,7 +21,7 @@ arch = [
     { package = "openssh", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "sshd" ] } },
 
 	# Package management helpers
-	{ package = "reflector", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "reflector.service" ] } },
+	{ package = "reflector", hooks = { after_install = [ "sudo", "systemctl", "enable", "reflector.service" ] } },
 	"pacman-contrib",
 	"rebuild-detector",
 
