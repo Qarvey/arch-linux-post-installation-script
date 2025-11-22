@@ -8,6 +8,7 @@ arch = [
 
 	# Snapshotting
 	"snapper",
+	"snap-pac",
 
 	# Limine utils.
 	"limine-mkinitcpio-hook",
