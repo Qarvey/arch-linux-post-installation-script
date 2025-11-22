@@ -1,0 +1,4 @@
+arch = [
+	"dbeaver-ce-jre-bin",
+	"postman-bin"
+]
