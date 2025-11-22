@@ -3,8 +3,8 @@ arch = [
 	"btrfs-progs",
 
 	# Security
-	"apparmor",
-	{ package = "apparmor.d-git", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "apparmor.service" ] } },
+	# "apparmor", # Currently more trouble than its worth
+	# { package = "apparmor.d-git", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "apparmor.service" ] } },
 
 	# Snapshotting
 	"snapper",
