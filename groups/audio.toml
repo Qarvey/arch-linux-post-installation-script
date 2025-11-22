@@ -3,6 +3,7 @@ arch = [
     "alsa-firmware",
     "alsa-plugins",
     "alsa-utils",
+    "lib32-alsa-plugins",
 
     # PipeWire
     "pipewire-pulse",
@@ -12,6 +13,8 @@ arch = [
     "rtkit",
     "gst-plugin-pipewire",
     "wiremix",
+    "lib32-libpipewire",
+    "lib32-libpulse",
 
     # GStreamer codecs
     "gst-libav",
