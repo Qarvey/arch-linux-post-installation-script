@@ -19,6 +19,9 @@ ln -s $HOME/.mnt/SAMSUNG@STORAGE/minecraft-instances $HOME/.local/share/PrismLau
 cp -rv ${SCRIPT_DIR}/bin $HOME/
 cp -rv ${SCRIPT_DIR}/desktop $HOME/.local/share/applications
 
+rm -rf $HOME/Desktop
+ln -s $HOME/.local/share/applications $HOME/Desktop
+
 sudo mkdir -p /etc/xdg/reflector
 cp -rv ${SCRIPT_DIR}/etc/xdg/reflector/reflector.conf /etc/xdg/reflector/reflector.conf
 
