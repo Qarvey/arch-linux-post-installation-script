@@ -37,5 +37,7 @@ else
 fi
 
 sudo limine-update
+sudo limine-scan
+sudo systemctl enable --now linine-snapper-sync.service
 
 touch ${SCRIPT_FLAG}
