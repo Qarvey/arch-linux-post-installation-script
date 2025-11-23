@@ -20,6 +20,9 @@ fi
 #   sudo btrfs subvolume create ${TEMP_MOUNTPOINT}/@home_snapshots
 # fi
 
+sudo umount ${TEMP_MOUNTPOINT}
+rmdir ${TEMP_MOUNTPOINT}
+
 echo "Creating Snapper configuration(s)..."
 sudo snapper -c root create-config /
 # sudo snapper -c home create-config /home
@@ -29,6 +32,9 @@ if grep -q "UUID=${SAMSUNG_STORAGE_UUID}.*/.snapshots" /etc/fstab; then
 else
     echo "Configuring SUBVOLUME '@root_snapshots' in UUID ${SAMSUNG_STORAGE_UUID} to mount at '/.snapshots' in 'fstab'..."
     echo -e "\nUUID=${SAMSUNG_STORAGE_UUID}  /.snapshots  btrfs  subvol=/@root_snapshots,defaults,noatime,compress=zstd  0 0" | sudo tee -a /etc/fstab
+
+    echo "Temporarily mounting SUBVOLUME '@root_snapshots' in UUID ${SAMSUNG_STORAGE_UUID} to '/.snapshots'..."
+    sudo mount -o subvol=@root_snapshots ${SAMSUNG_STORAGE_UUID} /.snapshots
 fi
 
 touch ${SCRIPT_FLAG}
