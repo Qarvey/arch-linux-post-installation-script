@@ -39,5 +39,6 @@ fi
 sudo limine-update
 sudo limine-scan
 sudo systemctl enable --now linine-snapper-sync.service
+sudo systemctl enable --now apparmor.service
 
 touch ${SCRIPT_FLAG}
