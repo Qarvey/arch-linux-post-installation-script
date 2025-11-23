@@ -16,6 +16,7 @@ arch = [
 
 	# Limine utils.
 	"limine-mkinitcpio-hook",
+	"kernel-modules-hook",
 	"limine-snapper-sync",
 	
 	# Network
