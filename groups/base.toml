@@ -1,10 +1,14 @@
 arch = [
+	# CachyOS LTS kernel
+	"linux-cachyos-lts",
+	"linux-cachyos-lts-headers",
+
 	# Drive utilities
 	"btrfs-progs",
 
 	# Security
-	# "apparmor", # Currently more trouble than its worth
-	# { package = "apparmor.d-git", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "apparmor.service" ] } },
+	"apparmor",
+	{ package = "apparmor.d-git", hooks = { after_install = [ "sudo", "systemctl", "enable", "apparmor.service" ] } },
 
 	# Snapshotting
 	"snapper",
@@ -18,7 +22,7 @@ arch = [
 	{ package = "networkmanager", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "NetworkManager.service" ] } },
 	{ package = "ufw", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "ufw.service" ] } },
 	"tufw",
-    { package = "openssh", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "sshd" ] } },
+    { package = "openssh", hooks = { after_install = [ "sudo", "systemctl", "enable", "sshd" ] } },
 
 	# Package management helpers
 	{ package = "reflector", hooks = { after_install = [ "sudo", "systemctl", "enable", "reflector.service" ] } },
