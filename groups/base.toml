@@ -8,7 +8,7 @@ arch = [
 
 	# Security
 	"apparmor",
-	{ package = "apparmor.d-git", hooks = { after_install = [ "sudo", "systemctl", "enable", "apparmor.service" ] } },
+	"apparmor.d-git",
 
 	# Snapshotting
 	"snapper",
