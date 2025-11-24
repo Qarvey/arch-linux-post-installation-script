@@ -24,7 +24,12 @@ sudo umount ${TEMP_MOUNTPOINT}
 rmdir ${TEMP_MOUNTPOINT}
 
 echo "Creating Snapper configuration(s)..."
-sudo snapper -c root create-config /
+if [ -f /etc/snapper/configs/root ]; then
+    echo "Snapper config 'root' already exists. Skipping creation."
+else
+    echo "Creating Snapper config 'root'..."
+    sudo snapper -c root create-config /
+fi
 # sudo snapper -c home create-config /home
 
 if grep -q "UUID=${SAMSUNG_STORAGE_UUID}.*/.snapshots" /etc/fstab; then
