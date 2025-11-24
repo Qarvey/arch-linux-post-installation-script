@@ -23,6 +23,13 @@ fi
 sudo umount ${TEMP_MOUNTPOINT}
 rmdir ${TEMP_MOUNTPOINT}
 
+if mountpoint -q /.snapshots; then
+    echo "Unmounting existing mount at '/.snapshots'..."
+    sudo umount /.snapshots
+fi
+
+sudo rm -rf /.snapshots
+
 echo "Creating Snapper configuration(s)..."
 if [ -f /etc/snapper/configs/root ]; then
     echo "Snapper config 'root' already exists. Skipping creation."
@@ -37,9 +44,11 @@ if grep -q "UUID=${SAMSUNG_STORAGE_UUID}.*/.snapshots" /etc/fstab; then
 else
     echo "Configuring SUBVOLUME '@root_snapshots' in UUID ${SAMSUNG_STORAGE_UUID} to mount at '/.snapshots' in 'fstab'..."
     echo -e "\nUUID=${SAMSUNG_STORAGE_UUID}  /.snapshots  btrfs  subvol=/@root_snapshots,defaults,noatime,compress=zstd  0 0" | sudo tee -a /etc/fstab
+fi
 
-    echo "Temporarily mounting SUBVOLUME '@root_snapshots' in UUID ${SAMSUNG_STORAGE_UUID} to '/.snapshots'..."
-    sudo mount -o subvol=@root_snapshots ${SAMSUNG_STORAGE_UUID} /.snapshots
+if ! mountpoint -q /.snapshots; then
+    echo "Nothing is mounted at '/.snapshots'. Mounting SUBVOLUME '@root_snapshots'..."
+    sudo mount -o subvol=@root_snapshots ${ROOT_DEVICE} /.snapshots
 fi
 
 touch ${SCRIPT_FLAG}
