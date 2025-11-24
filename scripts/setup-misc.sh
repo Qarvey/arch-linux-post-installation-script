@@ -8,7 +8,7 @@ sudo usermod -aG realtime "$(whoami)"
 echo "Setting up dotfiles..."
 cp -rv ${SCRIPT_DIR}/config/* $HOME/.config/
 
-echo "Setting 'micro' and 'code' as default text editor for Bash..."
+echo "Setting 'micro' and 'code' as default text editors..."
 echo 'export EDITOR="micro"' >> $HOME/.bashrc
 echo 'export VISUAL="code"' >> $HOME/.bashrc
 
