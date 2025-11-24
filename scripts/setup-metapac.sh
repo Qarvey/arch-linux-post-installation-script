@@ -53,5 +53,6 @@ cp -v ${METAPAC_CONFIG} $HOME/.config/metapac/config.toml
 
 echo "Installing packages declared by 'metapac'"
 metapac sync
+metapac clean
 
 touch ${SCRIPT_FLAG}
