@@ -35,4 +35,5 @@ arch = [
 	"duf",
 	"bat",
 	"bash-completion",
+	"inetutils",
 ]
