@@ -8,21 +8,14 @@ arch = [
     "xdg-desktop-portal-gtk",
 
     # Services
-    "dunst",
-    "polkit-gnome",
+    # "dunst",
 
     # Tools
-    "hyprpaper", # Wallpaper util.
-    "nwg-look", # GTK theming
+    # "hyprpaper", # Wallpaper util.
     "nwg-displays", # Display management
-    "nwg-panel", # Status bar
-    "wev", # Input debug
-    "rofi", # Launcher
+    # "nwg-panel", # Status bar
+    # "rofi", # Launcher
     # "networkmanager-dmenu",
-    
-    # Apps
-    "kitty", # Recommended terminal
-    "firefox", # Browser
 
     # Clipboard
     "wl-clipboard",
