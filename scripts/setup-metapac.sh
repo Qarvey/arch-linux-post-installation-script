@@ -4,7 +4,6 @@ echo "Setting up 'metapac'..."
 
 echo "Updating system..."
 sudo pacman -Syu --noconfirm
-sudo pacman -S inetutils --noconfirm
 
 echo "Attempting to install 'paru'..."
 cd $HOME
@@ -28,11 +27,7 @@ fi
 
 echo "Initializing 'metapac' configuration..."
 
-METAPAC_CONFIG_NO_CORE="${SCRIPT_DIR}/config-no-core.toml"
 METAPAC_CONFIG="${SCRIPT_DIR}/config.toml"
-
-sed -i "s/^PLACEHOLDER = \[/$(hostname) = [/" "${METAPAC_CONFIG_NO_CORE}"
-sed -i "s/^PLACEHOLDER = \[/$(hostname) = [/" "${METAPAC_CONFIG}"
 
 if [[ -e $HOME/.config/metapac ]]; then
     rm -rf $HOME/.config/metapac
