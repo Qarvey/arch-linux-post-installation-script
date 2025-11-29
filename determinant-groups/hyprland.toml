@@ -11,10 +11,7 @@ arch = [
     # "dunst",
 
     # Tools
-    # "hyprpaper", # Wallpaper util.
     "nwg-displays", # Display management
-    # "nwg-panel", # Status bar
-    # "rofi", # Launcher
     # "networkmanager-dmenu",
 
     # Clipboard

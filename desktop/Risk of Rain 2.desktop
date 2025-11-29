@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Risk of Rain 2
+Comment=Play Risk of Rain 2
+Exec=/usr/lib/steam/steam -silent steam://rungameid/632360
+Icon=steam_icon_632360
+Terminal=false
+Type=Application
+Categories=Game;

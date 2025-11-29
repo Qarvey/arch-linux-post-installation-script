@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=DOTA 2
+Comment=Play DOTA 2
+Exec=/usr/lib/steam/steam -silent steam://rungameid/570
+Icon=steam
+Terminal=false
+Type=Application
+Categories=Game;

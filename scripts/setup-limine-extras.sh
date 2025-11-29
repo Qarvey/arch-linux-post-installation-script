@@ -3,6 +3,7 @@
 echo "Setting up extra Limine configurations..."
 
 LIMINE_CONF="/etc/default/limine"
+DEFAULT_FLAG=$(</proc/cmdline.txt)
 APPARMOR_FLAG="lsm=landlock,lockdown,yama,integrity,apparmor,bpf"
 
 sudo cp -rv /etc/limine-entry-tool.conf ${LIMINE_CONF}
@@ -10,7 +11,7 @@ sudo cp -rv /etc/limine-entry-tool.conf ${LIMINE_CONF}
 if grep -qF "${APPARMOR_FLAG}" "${LIMINE_CONF}"; then
   echo "Flag is already present in ${LIMINE_CONF}."
 else
-  sudo sed -i -E "s/^(KERNEL_CMDLINE\[default\]\+=\"[^\"]*)\"/\1 ${APPARMOR_FLAG}\"/" "${LIMINE_CONF}"
+  echo -e "\nKERNEL_CMDLINE[default]+=\"${DEFAULT_FLAG} ${APPARMOR_FLAG}\"" | sudo tee -a ${LIMINE_CONF}
   echo "Appended AppArmor LSM flag to ${LIMINE_CONF}."
 fi
 

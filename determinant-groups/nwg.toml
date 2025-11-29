@@ -2,4 +2,5 @@ arch = [
     "nwg-panel",
     "nwg-displays",
     "rofi",
+    "hyprpaper", # Wallpaper util.
 ]

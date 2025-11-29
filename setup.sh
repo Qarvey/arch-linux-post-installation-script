@@ -23,7 +23,7 @@ if [[ ! -e "${FLAGS}/setup-complete.flag" ]]; then
             source ${SCRIPT_DIR}/scripts/${SCRIPT}.sh
 
             while true; do
-                if ! read -t 10 -p "Continue? [Y/n] (auto-continues in 10s) " answer; then
+                if ! read -t 10 -p "Continue? [Y/n] (auto-continues in 10s): " answer; then
                     echo "Timed out — continuing by default."
                 fi
             
