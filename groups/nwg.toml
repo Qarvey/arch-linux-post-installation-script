@@ -1,0 +1,5 @@
+arch = [
+    "nwg-panel",
+    "nwg-displays",
+    "rofi",
+]
