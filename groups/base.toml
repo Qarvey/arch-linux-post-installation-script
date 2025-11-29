@@ -1,8 +1,4 @@
 arch = [
-	# CachyOS LTS kernel
-	"linux-cachyos-lts",
-	"linux-cachyos-lts-headers",
-
 	# Drive utilities
 	"btrfs-progs",
 
