@@ -1,10 +1,16 @@
 arch = [
     { package = "ly", hooks = { after_install = [ "sudo", "systemctl", "enable", "ly.service" ] } }, # Display manager
 
+    # Terminal emulator
+    "kitty",
+
     # Tools
+    "polkit-gnome",
     "btrfs-assistant",
     "gparted",
     "xorg-xhost", # To make GParted work in Hyprland
+    { package = "lact", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "lactd" ] } }, # GPU monitor and control
+    "nwg-look",
 
     # File managers
     "yazi", # TUI
@@ -15,12 +21,6 @@ arch = [
     "thunar-archive-plugin",
     "thunar-volman",
 
-    # Thumbnails & previews
-    "tumbler",
-    "ffmpegthumbnailer",
-    "libgsf",
-    "poppler-glib",
-
     # Archiver
     "xarchiver",
     "7zip",
@@ -28,24 +28,32 @@ arch = [
     "unzip",
     "zip",
 
+    # Thumbnails & previews
+    "tumbler",
+    "ffmpegthumbnailer",
+    "libgsf",
+    "poppler-glib",
+
     # Apps
+    "firefox",
     "mpv", # Media player
     "viewnior",
-    "legcord-bin", # Discord client
+    "equibop-bin", # Discord client
     "onlyoffice-bin", # Office suite
     "clipse", # Clipboard
-    "code",
-    "code-marketplace",
+    "vscodium",
+    "vscodium-marketplace",
+    "helium-browser-bin",
 
     # Gaming
     "steam",
     "gamescope",
     "protonup-qt",
-    "prismlauncher",
+    # "prismlauncher",
+    "r2modman",
+    "mangohud",
+    "lib32-mangohud",
+    "mangojuice",
 
-    # GPU monitor and control
-    { package = "lact", hooks = { after_install = [ "sudo", "systemctl", "enable", "--now", "lactd" ] } },
-
-    # Extra browser(s)
-    "helium-browser-bin",
+    "wev", # Input debug
 ]
