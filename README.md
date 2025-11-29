@@ -1,5 +1,5 @@
 # Arch Linux Post-installation Script
-## ... or Alpis
+... or Alpis
 
 A script to configure a minimal Arch Linux installation to my needs. It does the following:
 - Mounts my storage via `fstab`
