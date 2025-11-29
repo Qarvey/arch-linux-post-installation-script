@@ -1,0 +1,11 @@
+arch = [
+	"noctalia-shell",
+	"cava",
+	"cliphist",
+	"ddcutil",
+	"matugen-git",
+	"wlsunset",
+	"xdg-desktop-portal",
+	"qt6ct",
+	"adw-gtk-theme",
+]
